@@ -13,73 +13,8 @@
 using namespace cv;
 using namespace std;
 
-int blue_out[960][1280],green_out[960][1280],red_out[960][1280];
-int set_cols, set_rows;
+int sc_main(int argc, char* argv[]){
 
-void input::send_pixel(){
-	
-	unsigned short lsb,isb,msb; //assign least sig bit, inner sig bit, most sig bit variables
-	uint32_t rgb_24_bit; //assign 24 bit rgb signal variables
-	
-	int col_size = max_cols.read().to_int(); //the size of the rows and columns of the array
-	int row_size = max_rows.read().to_int();
-	
-	int rows = 0,cols = 0; // rows and columns counter
-	
-	bool notFinish = true; //verify if the job has been completed
-	
-	while(notFinish){
-	
-		sending = false;
-	
-		do wait();while(!start);
-		
-		newimage = true;
-		
-		do wait();while(!ready);
-		//cout << "got the ready" << endl;
-
-		//cout << "cols " << cols << endl;
-		//cout << "rows " << rows << endl;		
-		
-		lsb = blue_out[rows][cols];
-		wait();
-			
-		isb = green_out[rows][cols];
-		wait();
-		
-		msb = red_out[rows][cols];
-		wait();
-		
-		cols++;
-			
-		rgb_24_bit = lsb | isb << 8 | msb << 16;
-		wait();
-		
-		RGB_24_bit.write(rgb_24_bit);
-		wait();
-			
-		//cout << "24 bit write" << endl;
-		sending = true;
-		wait();
-			
-		if(cols >= col_size){
-			cols = 0;
-			rows++;
-		}
-		wait();
-		
-		if(rows >= row_size){
-			rows = 0;
-			notFinish = false;
-			//cout << " finished if on top side: " << endl;
-		}		
-		wait();	
-	}
-}
-
-int cameracapture(){
-	
 	VideoCapture cap(0);
 	int counter = 0;    
 	
@@ -123,14 +58,14 @@ int cameracapture(){
 		}
 	} 
 	
-	set_cols = camera.cols;
-	set_rows = camera.rows;
+	int cols = camera.cols;
+	int rows = camera.rows;
 	
-	for (int i = 0; i < set_rows; i++)
+	for (int i = 0; i < rows; i++)
     {
     	Vec3b *ptr = camera.ptr<Vec3b>(i);
 
-      	for (int j = 0; j < set_cols; j++)
+      	for (int j = 0; j < cols; j++)
         {   
       		Vec3b pixel = ptr[j];
       		blue_out[i][j] = pixel.val[0];
@@ -138,37 +73,18 @@ int cameracapture(){
       		red_out[i][j] = pixel.val[2];
         }
     }
-    
-    /*ofstream myfile;
-	myfile.open("text.txt");
-	for(int i = 0; i < set_rows;i++){
-		for(int j = 0 ; j < set_cols;j++){
-			blue_out[i][j] = rand()%256;
-			green_out[i][j] = rand()%256;
-			red_out[i][j] = rand()%256;
-			myfile << blue_out[i][j] << " ";
-			myfile << green_out[i][j] << " ";
-			myfile << red_out[i][j] << " ";
-		}
-		myfile << "\n";
-	}
-	myfile.close();*/
 	
 	imwrite("before.jpg", camera, compression_params);
-}
-
-int sc_main(int argc, char* argv[]){
-	
-	cameracapture();
 	
 	sc_clock c1;
 	sc_signal<bool> start,newimage,ready,sending;
 	sc_signal<sc_uint<24> > RGB;
 	sc_signal<sc_int<16> > col_size, row_size;
 	
-	col_size = set_cols;
-	row_size = set_rows;
+	col_size = cols;
+	row_size = rows;
 		
+
 	//-----initializes input module ports to signals------
 	input input("input");
 	input.clock(c1);
@@ -196,7 +112,7 @@ int sc_main(int argc, char* argv[]){
 	
 	
 	start = true;
-	sc_start(5,SC_MS);
+	sc_start(5, SC_MS);
 
 	return(0);
 }

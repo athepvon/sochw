@@ -1,5 +1,4 @@
 #include "systemc.h"
-#include "highgui.h"
 
 SC_MODULE(input) {
 	
@@ -10,7 +9,7 @@ SC_MODULE(input) {
 	sc_in<bool> ready;	//signal from filter module to start the transfer
 	sc_in<sc_int<16> >max_cols;
 	sc_in<sc_int<16> >max_rows;
-
+	int blue_out[960][1280],green_out[960][1280],red_out[960][1280];
 	void send_pixel();
 	
 	SC_CTOR(input) {

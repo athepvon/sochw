@@ -60,9 +60,11 @@ void filter::get_pic(){
 		}
 		wait();	
 		if(rows >= row_size){
+		//cout << "rows : " << rows << endl;
+		//cout << "cols : " << cols << endl;
 			rows = 0;
 			notFinish = false;
-			cout << "inside row if" << endl;
+			//cout << "inside row if" << endl;
 		}
 		wait();
 		//loop = true;

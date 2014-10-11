@@ -9,7 +9,6 @@ SC_MODULE(input) {
 	sc_in<bool> ready;	//signal from filter module to start the transfer
 	sc_in<sc_int<16> >max_cols;
 	sc_in<sc_int<16> >max_rows;
-
 	void send_pixel();
 	
 	SC_CTOR(input) {
