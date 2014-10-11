@@ -1,0 +1,68 @@
+#include "systemc.h"
+#include "filter.h"
+
+#include <sstream>
+#include <iostream>
+#include "stdint.h"
+#include <fstream>
+using namespace std;
+
+int array[4][3],array1[4][3],array2[4][3];
+
+SC_MODULE(input){
+
+
+void input::send_pixel(){
+	unsigned short lsb,isb,msb;
+	uint32_t bit24;
+	
+	while(true){
+		do wait(); while(!start);
+		
+		lsb = array[i][j];
+		isb = array1[i][j];
+		msb = array2[i][j];
+			
+		bit24 =	lsb | isb << 8 | msb << 16;
+		RGB = bit24;
+	
+	}
+
+};
+
+
+int sc_main(int argc, char* argv[]){
+	sc_clock c1;
+	sc_signal<bool> newimage,ready,loop;
+	sc_signal<sc_uint<24> > RGB;
+	sc_signal<sc_int<16> > size_x,size_y;
+	int x = 4 , y = 3;
+	//int count3;
+	size_x = x;
+	size_y = y;	
+
+	filter newfilter("FILTER");
+	newfilter.clock(c1);
+	newfilter.newimage(newimage);
+	newfilter.ready(ready);
+	newfilter.RGB(RGB);
+	newfilter.size_x_in(size_x);
+	newfilter.size_y_in(size_y);
+	newfilter.loop(loop);
+	
+	for(int i = 0; i < 3;i++){
+		for(int j = 0 ; j < 4;j++){
+			array[i][j] = rand()%256;
+			array1[i][j] = rand()%256;
+			array2[i][j] = rand()%256;
+		}
+
+	}
+	
+	//TOP top("top");
+	
+
+	return(0);
+	
+
+}
