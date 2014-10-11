@@ -1,6 +1,6 @@
 #include "systemc.h"
 #include "input.h"
-#include "filter.h"
+//#include "filter.h"
 #include "highgui.h"
 #include "opencv2/highgui/highgui.hpp"
 #include <sstream>
@@ -15,68 +15,6 @@ using namespace std;
 
 int blue_out[960][1280],green_out[960][1280],red_out[960][1280];
 int set_cols, set_rows;
-
-void input::send_pixel(){
-	
-	unsigned short lsb,isb,msb; //assign least sig bit, inner sig bit, most sig bit variables
-	uint32_t rgb_24_bit; //assign 24 bit rgb signal variables
-	
-	int col_size = max_cols.read().to_int(); //the size of the rows and columns of the array
-	int row_size = max_rows.read().to_int();
-	
-	int rows = 0,cols = 0; // rows and columns counter
-	
-	bool notFinish = true; //verify if the job has been completed
-	
-	while(notFinish){
-	
-		sending = false;
-	
-		do wait();while(!start);
-		
-		newimage = true;
-		
-		do wait();while(!ready);
-		//cout << "got the ready" << endl;
-
-		//cout << "cols " << cols << endl;
-		//cout << "rows " << rows << endl;		
-		
-		lsb = blue_out[rows][cols];
-		wait();
-			
-		isb = green_out[rows][cols];
-		wait();
-		
-		msb = red_out[rows][cols];
-		wait();
-		
-		cols++;
-			
-		rgb_24_bit = lsb | isb << 8 | msb << 16;
-		wait();
-		
-		RGB_24_bit.write(rgb_24_bit);
-		wait();
-			
-		//cout << "24 bit write" << endl;
-		sending = true;
-		wait();
-			
-		if(cols >= col_size){
-			cols = 0;
-			rows++;
-		}
-		wait();
-		
-		if(rows >= row_size){
-			rows = 0;
-			notFinish = false;
-			//cout << " finished if on top side: " << endl;
-		}		
-		wait();	
-	}
-}
 
 int cameracapture(){
 	
@@ -157,7 +95,79 @@ int cameracapture(){
 	imwrite("before.jpg", camera, compression_params);
 }
 
-int sc_main(int argc, char* argv[]){
+void input::send_pixel(){
+
+	cameracapture();
+	
+	unsigned short lsb,isb,msb; //assign least sig bit, inner sig bit, most sig bit variables
+	uint32_t rgb_24_bit; //assign 24 bit rgb signal variables
+	
+	//int col_size = max_cols.read().to_int(); //the size of the rows and columns of the array
+	//int row_size = max_rows.read().to_int();
+	int col_size = set_cols; //the size of the rows and columns of the array
+	int row_size = set_rows;
+
+	max_cols.write(set_cols);
+	max_rows.write(set_rows);
+	wait();
+	
+	cout << "set " << max_cols << " x " << max_rows << endl;
+	int rows = 0,cols = 0; // rows and columns counter
+	
+	bool notFinish = true; //verify if the job has been completed
+	wait();
+	
+	while(notFinish){
+	
+		sending = false;
+	
+		do wait();while(!start);
+		
+		newimage = true;
+		
+		do wait();while(!ready);
+		//cout << "got the ready" << endl;
+
+		//cout << "cols " << cols << endl;
+		//cout << "rows " << rows << endl;		
+		
+		lsb = blue_out[rows][cols];
+		wait();
+			
+		isb = green_out[rows][cols];
+		wait();
+		
+		msb = red_out[rows][cols];
+		wait();
+		
+		cols++;
+			
+		rgb_24_bit = lsb | isb << 8 | msb << 16;
+		wait();
+		
+		RGB_24_bit.write(rgb_24_bit);
+		wait();
+			
+		//cout << "24 bit write" << endl;
+		sending = true;
+		wait();
+			
+		if(cols >= col_size){
+			cols = 0;
+			rows++;
+		}
+		wait();
+		
+		if(rows >= row_size){
+			rows = 0;
+			notFinish = false;
+			//cout << " finished if on top side: " << endl;
+		}		
+		wait();	
+	}
+}
+
+/*int sc_main(int argc, char* argv[]){
 	
 	cameracapture();
 	
@@ -199,4 +209,4 @@ int sc_main(int argc, char* argv[]){
 	sc_start(5,SC_MS);
 
 	return(0);
-}
+}*/

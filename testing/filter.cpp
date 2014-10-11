@@ -5,8 +5,9 @@ using namespace std;
 int blue[960][1280],green[960][1280],red[960][1280];
 
 void filter::get_pic(){
-	int col_size = max_cols.read().to_int();
-	int row_size = max_rows.read().to_int();
+	int col_size;// = max_cols.read().to_int();
+	int row_size;// = max_rows.read().to_int();
+	
 	bool notFinish = true;
 	int rows = 0, cols = 0;
 	
@@ -14,6 +15,10 @@ void filter::get_pic(){
 
 		//cout << "come in" << endl;
 		do wait(); while(!newimage);
+		
+		col_size = max_cols.read().to_int();
+		row_size = max_rows.read().to_int();
+		//cout << "set " << max_cols << " x " << max_rows << endl;
 		//cout << "got the newimage" << endl;
 		ready = true;
 		wait();
@@ -60,11 +65,11 @@ void filter::get_pic(){
 		}
 		wait();	
 		if(rows >= row_size){
-		//cout << "rows : " << rows << endl;
-		//cout << "cols : " << cols << endl;
+		cout << "rows : " << rows << endl;
+		cout << "cols : " << cols << endl;
 			rows = 0;
 			notFinish = false;
-			//cout << "inside row if" << endl;
+			cout << "inside row if" << endl;
 		}
 		wait();
 		//loop = true;

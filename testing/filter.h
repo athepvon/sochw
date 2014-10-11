@@ -11,8 +11,14 @@ SC_MODULE(filter) {
 	sc_uint<24> byte_to_pix; // converts bytes to pixels
 
 	void get_pic();
+	//void laplace();
+	//void gauss();
+	//void median();
+	//void sobel();
 	
 	SC_CTOR(filter) {
 		SC_CTHREAD(get_pic, clock.pos());
+		//SC_METHOD(laplace);
+			//sensitive_pos << clock;
 	}
 };
