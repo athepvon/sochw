@@ -1,0 +1,45 @@
+#include "systemc.h"
+#include "highgui.h"
+#include <sstream>
+#include <iostream>
+#include "stdint.h"
+#include <fstream>
+#include <stdio.h>
+
+using namespace cv;
+using namespace std;
+int blue_[960][1280],green_[960][1280],red_[960][1280];
+
+void saveimage(int rows, int cols){
+
+	vector<int> compression_params; //vector that stores the compression parameters of the image
+    compression_params.push_back(CV_IMWRITE_JPEG_QUALITY); //specify the compression technique
+	compression_params.push_back(98); //specify the compression quality
+
+    Mat image(rows, cols, CV_8UC3 );
+    for(int i=0; i<rows; i++){
+   		for(int j=0; j<cols; j++){
+   			image.at<Vec3b>(i,j) = Vec3b(blue_[i][j],green_[i][j],red_[i][j]);
+    	}
+	}
+	imwrite("after.jpg", image, compression_params);
+}
+
+SC_MODULE(output){
+
+	sc_in_clk clock;
+	sc_in<bool> newimage_from_filter,send_from_filter;
+	sc_out<bool> ready_to_filter;
+	sc_in<sc_uint<24> > RGB_24_bit_in;
+	sc_in<sc_int<16> > cols_in;
+	sc_in<sc_int<16> > rows_in;
+	sc_uint<24> byte_to_pix;
+	
+	void save_pic();
+	
+	SC_CTOR(output){
+		SC_CTHREAD(save_pic, clock.pos());
+	}
+};
+
+
