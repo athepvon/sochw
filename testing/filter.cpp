@@ -8,10 +8,9 @@ void filter::get_pic(){
 	int col_size;// = max_cols.read().to_int();
 	int row_size;// = max_rows.read().to_int();
 	
-	bool notFinish = true;
 	int rows = 0, cols = 0;
 	
-	while(notFinish) {
+	while(true) {
 
 		//cout << "come in" << endl;
 		do wait(); while(!newimage);
@@ -61,17 +60,16 @@ void filter::get_pic(){
 		if (cols >= col_size ) {
 			cols = 0;
 			rows++;
-			
 		}
-		wait();	
+
 		if(rows >= row_size){
-		cout << "rows : " << rows << endl;
-		cout << "cols : " << cols << endl;
+			cout << "rows : " << rows << endl;
+			cout << "cols : " << cols << endl;
 			rows = 0;
-			notFinish = false;
 			cout << "inside row if" << endl;
+			break;
 		}
-		wait();
 		//loop = true;
 	}
+	sc_stop();
 }

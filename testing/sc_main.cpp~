@@ -13,10 +13,7 @@ int sc_main(int argc, char* argv[]){
 	sc_signal<bool> start,newimage,ready,sending;
 	sc_signal<sc_uint<24> > RGB;
 	sc_signal<sc_int<16> > col_size, row_size;
-	
-	//col_size = set_cols;
-	//row_size = set_rows;
-		
+
 	//-----initializes input module ports to signals------
 	input input("input");
 	input.clock(c1);
@@ -44,7 +41,7 @@ int sc_main(int argc, char* argv[]){
 	
 	
 	start = true;
-	sc_start();
+	sc_start(5, SC_MS);
 
 	return(0);
 }
