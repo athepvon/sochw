@@ -10,12 +10,31 @@
 using namespace cv;
 using namespace std;
 
-//int blue_[960][1280],green_[960][1280],red_[960][1280];
+int blue_[960][1280],green_[960][1280],red_[960][1280];
+
+void saveimage(int rows, int cols){
+
+	vector<int> compression_params; //vector that stores the compression parameters of the image
+    compression_params.push_back(CV_IMWRITE_JPEG_QUALITY); //specify the compression technique
+	compression_params.push_back(98); //specify the compression quality
+
+    Mat image(rows, cols, CV_8UC3 );
+    for(int i=0; i<rows; i++){
+   		for(int j=0; j<cols; j++){
+   			image.at<Vec3b>(i,j) = Vec3b(blue_[i][j],green_[i][j],red_[i][j]);
+    	}
+	}
+	
+	imwrite("after.jpg", image, compression_params);
+	imshow("Camera", image);
+	waitKey(0);
+}
 
 void output::save_pic(){
 	int col_size;
 	int row_size;
 	int rows = 0, cols = 0;
+	Mat image;
 	
 	while(true) {
 
@@ -49,16 +68,17 @@ void output::save_pic(){
 		}
 
 		if(rows >= row_size){
-			cout << "rows : " << rows << endl;
-			cout << "cols : " << cols << endl;
+			//cout << "rows : " << rows << endl;
+			//cout << "cols : " << cols << endl;
 			rows = 0;
-			cout << "inside output" << endl;
+			//cout << "inside output" << endl;
 			break;
 		}
 	}
 	saveimage(row_size,col_size);
 	
 	sc_stop();
+
 }
 
 

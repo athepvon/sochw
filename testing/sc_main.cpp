@@ -14,7 +14,7 @@ int sc_main(int argc, char* argv[]){
 	sc_signal<sc_uint<24> > RGB_in_fil,RGB_fil_out;
 	sc_signal<sc_int<16> > col_size, row_size;
 	sc_signal<sc_int<4> > sig_filter;
-	
+	int filter_input;
 	//-----initializes input module ports to signals------
 	input input("input");
 	input.clock(c1);
@@ -54,7 +54,10 @@ int sc_main(int argc, char* argv[]){
 	output.cols_in(col_size);
 	output.rows_in(row_size);
 	//to determine which filter to use 1 = laplace; 2 = gauss; 3 = median; 4 = sobel
-	sig_filter = 2;
+	cout << "Enter the filter number of your selections." << endl;
+	cout << "1 = laplace | 2 = gauss | 3 = median | 4 = sobel" << endl;
+	cin >> filter_input;
+	sig_filter = filter_input;
 	start = true;
 	sc_start();
 	return(0);

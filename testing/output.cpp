@@ -24,13 +24,18 @@ void saveimage(int rows, int cols){
    			image.at<Vec3b>(i,j) = Vec3b(blue_[i][j],green_[i][j],red_[i][j]);
     	}
 	}
+	cout << "Showing ouput image....." << endl;
 	imwrite("after.jpg", image, compression_params);
+	imshow("Camera", image);
+	cout << "Press any key to escape image." << endl;
+	waitKey(0);
 }
 
 void output::save_pic(){
 	int col_size;
 	int row_size;
 	int rows = 0, cols = 0;
+	Mat image;
 	
 	while(true) {
 
@@ -64,16 +69,17 @@ void output::save_pic(){
 		}
 
 		if(rows >= row_size){
-			cout << "rows : " << rows << endl;
-			cout << "cols : " << cols << endl;
+			//cout << "rows : " << rows << endl;
+			//cout << "cols : " << cols << endl;
 			rows = 0;
-			cout << "inside output" << endl;
+			//cout << "inside output" << endl;
 			break;
 		}
 	}
 	saveimage(row_size,col_size);
 	
 	sc_stop();
+
 }
 
 

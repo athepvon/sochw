@@ -32,12 +32,12 @@ bool cameracapture(){
 	double cam_width = cap.get(CV_CAP_PROP_FRAME_WIDTH);
 	double cam_height = cap.get(CV_CAP_PROP_FRAME_HEIGHT);
 	
-	cout << "Frame size : " << cam_width << " x " << cam_height << endl;
+	//cout << "Frame size : " << cam_width << " x " << cam_height << endl;
 	
 	namedWindow("Camera",CV_WINDOW_AUTOSIZE);
 	
 	Mat camera(cam_height,cam_width,CV_8UC3);
-	
+	cout << "Showing Camera......" << endl;
 	while (1) {
 		
 		bool cap_success = cap.read(camera);
