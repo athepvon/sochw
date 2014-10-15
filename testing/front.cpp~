@@ -1,7 +1,0 @@
-#include "highgui.h"
-#include "input.h"
-using namespace cv;
-
-int main(int argc, char* argv[]){
-	scmain();
-}
