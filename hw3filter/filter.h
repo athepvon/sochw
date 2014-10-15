@@ -12,6 +12,7 @@ SC_MODULE(filter) {
 	sc_in<sc_uint<24> >rgb_in;
 	sc_uint<24> byte_to_pix;
 	sc_signal<bool> newimage; 
+	bool waittosend,readytosend,sendingimage;
 	
 	void get_image();
 	void send_image();

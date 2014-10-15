@@ -1,8 +1,9 @@
 #include "systemc.h"
 #include "filter.h"
-	int blue[480][640],green[480][640],red[480][640];
-	int blue_copy[480][640],green_copy[480][640],red_copy[480][640];
-	bool waittosend,readytosend,sendingimage;
+
+int blue[480][640],green[480][640],red[480][640];
+int blue_copy[480][640],green_copy[480][640],red_copy[480][640];
+
 void filter::get_image(){
 	int rows = 0, cols = 0;
 	int max_rows,max_cols;
