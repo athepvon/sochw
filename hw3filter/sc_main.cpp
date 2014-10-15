@@ -10,7 +10,7 @@ int sc_main(int argc, char* argv[]){
 	
 	sc_clock c1;
 	sc_signal<bool> ready_if, image_if, send_if, newimage_fo, median_in,sobel_in;
-	sc_signal<bool> send_fo, ready_fo, laplace_in, issave, filterisdone, gauss_in;
+	sc_signal<bool> send_fo, ready_fo, laplace_in, issave, filterisdone, gauss_in, nofilter_in;
 	sc_signal<sc_int<16> >rows_if,cols_if,rows_fo,cols_fo;
 	sc_signal<sc_uint<24> >rgb_infil,rgb_filout;
 	int choose_filter;
@@ -43,6 +43,7 @@ int sc_main(int argc, char* argv[]){
 	filter.gauss_in(gauss_in);
 	filter.median_in(median_in);
 	filter.sobel_in(sobel_in);
+	filter.nofilter_in(nofilter_in);
 	filter.filterisdone(filterisdone);
 	filter.issave(issave);
 	
@@ -58,13 +59,14 @@ int sc_main(int argc, char* argv[]){
 	output.issave(issave);
 	
 	cout << "Please choose a filter." << endl;
-	cout << "1: Laplace Filter | 2: Gaussian Filter | 3: Median Filter | 4: Sobel Filter" << endl;
+	cout << "1: No Filter 2: Laplace Filter | 3: Gaussian Filter | 4: Median Filter | 5: Sobel Filter" << endl;
 	cin >> choose_filter;
 	switch(choose_filter){
-		case 1: laplace_in = true; break;
-		case 2: gauss_in = true; break;
-		case 3: median_in = true; break;
-		case 4: sobel_in = true; break;
+		case 1: nofilter_in = true; break;
+		case 2: laplace_in = true; break;
+		case 3: gauss_in = true; break;
+		case 4: median_in = true; break;
+		case 5: sobel_in = true; break;
 	}
 	cout << "loading........." << endl;
 	sc_start();

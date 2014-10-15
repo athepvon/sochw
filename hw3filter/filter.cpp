@@ -37,13 +37,6 @@ void filter::get_image(){
 			}
 			
 			if(rows >= max_rows){
-				for(int i = 0; i < rows; i++){
-					for(int j = 0; j < cols; j++){
-						blue_copy[i][j] = blue[i][j];
-						green_copy[i][j] = green[i][j];
-						red_copy[i][j] = red[i][j];				
-					}
-				}
 				rows = 0;
 				//cout << "recieved image to filter" << endl;
 				newimage = true;
@@ -625,4 +618,40 @@ void filter::sobel(){
 	}
 }
 
+void filter::nofilter(){
+	int rows;
+	int cols;
+	while(true){		
+		do wait();while(!nofilter_in);
+
+		do wait();while(!newimage);
+		wait();
+		
+		waittosend = false;
+		wait();
+		
+		rows = rows_in.read().to_int();
+		wait();
+		
+		cols = cols_in.read().to_int();
+		wait();
+		
+
+		for(int i = 0; i < rows; i++){
+			for(int j = 0; j < cols; j++){
+				blue_copy[i][j] = blue[i][j];
+				green_copy[i][j] = green[i][j];
+				red_copy[i][j] = red[i][j];				
+			}
+		}
+		readytosend = true;
+		wait();
+		
+		do wait(); while(!sendingimage);
+		waittosend = true;
+		wait();
+		readytosend = false;
+		wait();
+	}
+}
 
