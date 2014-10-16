@@ -1,6 +1,7 @@
 #include "systemc.h"
 #include "filter.h"
 
+//global array input and a copy of the input
 int blue[480][640],green[480][640],red[480][640];
 int blue_copy[480][640],green_copy[480][640],red_copy[480][640];
 
@@ -9,23 +10,31 @@ void filter::get_image(){
 	int max_rows,max_cols;
 	
 	while(true){
-
+		//waits for a new image from the input module
 		do wait();while(!newimage_finput);
 		
+		//sets the rows and column max
 		max_rows = rows_in.read().to_int();
 		wait();
 		max_cols = cols_in.read().to_int();
 		wait();
 	
 		while(true){
+			//tells the input module that it is ready to receive the transfer
 			ready_toinput = true;
+			
+			//waits for the input module to 
 			do wait();while(!send_finput);
+			
+			//tells the input module to wait until the filter has been finish and transferred to the output module
 			ready_toinput = false;
 			wait();
-	
+			
+			//reads in the 24 bit RGB pixels
 			byte_to_pix = rgb_in.read();
 			wait();
 			
+			//breaks up the 24 bit Pixels into separate coloured arrays
 			blue[rows][cols] = byte_to_pix.range(7,0);
 			green[rows][cols] = byte_to_pix.range(15,8);
 			red[rows][cols] = byte_to_pix.range(23,16);
@@ -39,9 +48,12 @@ void filter::get_image(){
 			
 			if(rows >= max_rows){
 				rows = 0;
-				//cout << "recieved image to filter" << endl;
+				
+				//tells the filters that there is a new image to be filtered
 				newimage = true;
 				wait();
+				
+				//waits on the filters to be ready for another image
 				do wait();while(!waittosend);
 				newimage = false;
 				wait();
@@ -61,30 +73,38 @@ void filter::send_image(){
 	int max_rows,max_cols;
 	
 	while(true){
-		
+		//wait until the filter has finish its process
 		do wait();while(!readytosend);
-
-		//cout << " new image to send out to output" << endl;
+		
+		//sets max rows and columns
 		max_rows = rows_in.read().to_int();
 		wait();
 		max_cols = cols_in.read().to_int();
 		wait();
+	
+		//sends the rows and columns to the output module
 		rows_out.write(max_rows);
 		wait();
 		cols_out.write(max_cols);
 		wait();
+		
+		//tells the output module that there is a new transfer to be sent
 		newimage_toout = true;
 		
 		while(true){
+			//wait until the filter has finish its process
 			do wait();while(!ready_tosend);
-			//cout << "new image sending to output" << endl;
+			
 			lsb = blue_copy[rows][cols];
 			isb = green_copy[rows][cols];
 			msb = red_copy[rows][cols];
 			rgb_24_bit = lsb | isb << 8 | msb << 16;
+			
+			//transfer the 24 bit to the output
 			rgb_out.write(rgb_24_bit);
 			wait();
 			
+			//tells the output module that there is a new transfer
 			send_toout = true;
 			wait();
 			
@@ -94,14 +114,15 @@ void filter::send_image(){
 				cols = 0;
 				rows++;
 			}
+			
 			if(rows >= max_rows){
 				rows = 0;
 				newimage_toout = false;
 				wait();
+				//waits on the output module to be ready for a new transfer
 				do wait();while(!issave);
 				sendingimage=true;
 				wait();
-				//cout << "setting newimage from filter to output to false" << endl;
 				break;
 			}			
 		}
@@ -113,21 +134,19 @@ void filter::laplace(){
 	int rows;
 	int cols;
 	while(true){
-	
+		//waits to see if the user chooses this filter to use
 		do wait();while(!laplace_in);
-		//cout << newimage << " new image in laplace" << endl;
+		//waits for a new image from the get_image function
 		do wait();while(!newimage);
-		//cout << newimage << " new image in laplace 2 " << endl;
 		waittosend = false;
 		wait();
 		
+		//sets the rows and columns
 		rows = rows_in.read().to_int();
 		wait();
-		
 		cols = cols_in.read().to_int();
 		wait();
 		
-		//cout << "inside laplace" << endl;
 		// create sliding window / mask / kernel and fill it
 		int kernel[3][3] =
 		{
@@ -614,6 +633,7 @@ void filter::sobel(){
 		do wait(); while(!sendingimage);
 		waittosend = true;
 		wait();
+		
 		readytosend = false;
 		wait();
 	}
@@ -655,4 +675,3 @@ void filter::nofilter(){
 		wait();
 	}
 }
-

@@ -14,14 +14,28 @@ SC_MODULE(filter) {
 	sc_signal<bool> newimage; 
 	bool waittosend,readytosend,sendingimage;
 	
+	//get the image from the input module
 	void get_image();
+	
+	//sends the image to the output module after filters
 	void send_image();
+	
+	//laplace filter
 	void laplace();
+	
+	//gaussian filter
 	void gauss();
+	
+	//median blur filter
 	void median();
+	
+	//sobel filter
 	void sobel();
+	
+	//no filter
 	void nofilter();
 	
+	//constructor for the filter module
 	SC_CTOR(filter){
 		SC_CTHREAD(get_image, clock);
 		SC_CTHREAD(send_image, clock);

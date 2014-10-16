@@ -10,8 +10,10 @@ SC_MODULE(output){
 	sc_signal<bool> newimage; 
 	int blue_out[480][640],green_out[480][640],red_out[480][640];
 	bool readytoshow;
-
+	
+	//receives the image from the filter module
 	void get_image();
+	//shows the image on the screen
 	void show_image();
 	
 	SC_CTOR(output) {

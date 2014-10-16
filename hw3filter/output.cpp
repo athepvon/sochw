@@ -1,11 +1,7 @@
 #include "systemc.h"
 #include "output.h"
 #include "highgui.h"
-#include <sstream>
-#include "stdint.h"
-#include <fstream>
 #include <iostream>
-#include <stdio.h>
 
 using namespace cv;
 using namespace std;
@@ -14,22 +10,25 @@ void output::get_image(){
 	int rows = 0, cols = 0;
 	int max_rows,max_cols;
 	
-	
 	while(true){
-	
+		//waits for a new image from the filter module
 		do wait();while(!newimage_ffil);
-		//cout << " new image in output" << endl;
+		
+		//sets the rows and columns
 		max_rows = rows_in.read().to_int();
 		wait();
 		max_cols = cols_in.read().to_int();
 		wait();
-		//cout << "row and cols" << max_rows << " "<< max_cols << endl;
+		
 		while(true){
+			//tells the filter module that its ready to receive the transfer
 			ready_tofil = true;
+			
+			//waits for the filter module to send the transfer
 			do wait();while(!send_ffil);
 			ready_tofil = false;
 			wait();
-			//cout << "new image being recieved in output" << endl;
+			
 			byte_to_pix = rgb_in.read();
 			wait();
 			
@@ -45,14 +44,14 @@ void output::get_image(){
 			}
 			
 			if(rows >= max_rows){
-				//cout << "rows and working " << rows << endl;
 				rows = 0;
 				newimage = true;
 				wait();
+				//waits for the show_function to be ready for another image
 				do wait();while(!readytoshow);
-				//cout<< "setting new image to false "<<endl;
 				newimage = false;
 				wait();
+				//tells the filter module that it is ready for another image
 				issave = true;
 				wait();
 				break;
@@ -63,34 +62,38 @@ void output::get_image(){
 
 void output::show_image(){
 	int max_rows,max_cols;
+	int counter;
 	
 	while(true){
+		//waits or a new image from the get_image function
 	    do wait();while(!newimage);
-	   
-	    wait();
 	   	max_rows = rows_in.read().to_int();
 		wait();
 		max_cols = cols_in.read().to_int();
 		wait();
-	   
-	    wait();
+		
+		//creates matrix type array of pixels and combine them into and image
 	    Mat image(max_rows,max_cols,CV_8UC3);
 	    
+		//combine all the arrays to create an image
     	for(int i=0; i<max_rows; i++){
    			for(int j=0; j<max_cols; j++){
    				image.at<Vec3b>(i,j) = Vec3b(blue_out[i][j],green_out[i][j],red_out[i][j]);
     		}
 		}
-		//cout << "showing the image" <<endl;
+		//shows the image to a window
 		imshow("image",image);
 		
 		readytoshow=true;
 		wait();
 		
+		//hitting the enter button will escape the program
+		if(counter < 1)
+			cout << "Press the enter button to escape." << endl;
+		counter++;
 		if(waitKey(30) == 13){
 			sc_stop();
 			break;
 		}
 	}
-}	
-	
+}

@@ -7,7 +7,7 @@
 using namespace std;
 
 int sc_main(int argc, char* argv[]){
-	
+	//signal variables
 	sc_clock c1;
 	sc_signal<bool> ready_if, image_if, send_if, newimage_fo, median_in,sobel_in;
 	sc_signal<bool> send_fo, ready_fo, laplace_in, issave, filterisdone, gauss_in, nofilter_in;
@@ -15,6 +15,7 @@ int sc_main(int argc, char* argv[]){
 	sc_signal<sc_uint<24> >rgb_infil,rgb_filout;
 	int choose_filter;
 	
+	//input module signal binding
 	input input("input");
 	input.clock(c1);
 	input.ready_tosend(ready_if);
@@ -25,6 +26,7 @@ int sc_main(int argc, char* argv[]){
 	input.cols_out(cols_if);
 	input.filterisdone(filterisdone);
 	
+	//filter module signal binding
 	filter filter("filter");
 	filter.clock(c1);
 	filter.newimage_finput(image_if);
@@ -47,7 +49,7 @@ int sc_main(int argc, char* argv[]){
 	filter.filterisdone(filterisdone);
 	filter.issave(issave);
 	
-	
+	//output module signal binding
 	output output("output");
 	output.clock(c1);
 	output.newimage_ffil(newimage_fo);
@@ -58,9 +60,11 @@ int sc_main(int argc, char* argv[]){
 	output.rgb_in(rgb_filout);
 	output.issave(issave);
 	
+	//input command to determine which filter to use
 	cout << "Please choose a filter." << endl;
 	cout << "1: No Filter 2: Laplace Filter | 3: Gaussian Filter | 4: Median Filter | 5: Sobel Filter" << endl;
 	cin >> choose_filter;
+	
 	switch(choose_filter){
 		case 1: nofilter_in = true; break;
 		case 2: laplace_in = true; break;
@@ -69,6 +73,7 @@ int sc_main(int argc, char* argv[]){
 		case 5: sobel_in = true; break;
 	}
 	cout << "loading........." << endl;
+	
 	sc_start();
 	return 0;
 }
