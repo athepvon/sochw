@@ -1,0 +1,16 @@
+##############################################################################
+## Filename:          /home/mmefenza/Documents/FPGALINUX/GigaBee_XC6LX-Axi_lite/hw_axi/back/pcores/axi_sdi_controller_v1_00_a/data/axi_sdi_controller_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Tue Jan 15 17:00:42 2013 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib axi_master_burst_v1_00_a  all 
+lib axi_sdi_controller_v1_00_a interrupt_control vhdl
+lib axi_sdi_controller_v1_00_a fifo_generator_v4_4_64 vhdl
+lib axi_sdi_controller_v1_00_a fifo_generator_v4_4_32 vhdl
+lib axi_sdi_controller_v1_00_a fifo_generator_v4_4_16_64 vhdl
+lib axi_sdi_controller_v1_00_a fifo vhdl
+lib axi_sdi_controller_v1_00_a user_logic vhdl
+lib axi_sdi_controller_v1_00_a axi_sdi_controller vhdl

@@ -1,0 +1,19 @@
+##############################################################################
+## Filename:          /home/fyonga/Documents/Classes/TA/Embedded_Systems/EDK/RazorCar_Camera_AXI_Sobel/pcores/razorcar_hardware_v1_01_a/data/razorcar_hardware_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Wed Nov 20 22:10:32 2013 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib razorcar_hardware_v1_01_a user_logic vhdl
+lib razorcar_hardware_v1_01_a razorcar_hardware vhdl
+lib razorcar_hardware_v1_01_a Ledcontrol vhdl
+lib razorcar_hardware_v1_01_a Buzzercontrol vhdl
+lib razorcar_hardware_v1_01_a Steering_speed vhdl
+lib razorcar_hardware_v1_01_a speed_pwm_generator vhdl
+lib razorcar_hardware_v1_01_a steering_pwm_generator vhdl
+lib razorcar_hardware_v1_01_a state_machine vhdl
+lib razorcar_hardware_v1_01_a transmission_detection vhdl
+lib razorcar_hardware_v1_01_a adc78h89 vhdl
+lib razorcar_hardware_v1_01_a BtnSwitch vhdl

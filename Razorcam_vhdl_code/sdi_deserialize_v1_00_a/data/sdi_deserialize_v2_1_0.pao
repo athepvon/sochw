@@ -1,0 +1,7 @@
+##############################################################################
+## Filename:          /home/hartmann/picsy/EDK/hand_follower_sw_2cams_test/pcores/sdi_deserialize_v1_00_a/data/sdi_deserialize_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Thu Feb 25 13:49:10 2010 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib sdi_deserialize_v1_00_a sdi_deserialize.vhdl vhdl

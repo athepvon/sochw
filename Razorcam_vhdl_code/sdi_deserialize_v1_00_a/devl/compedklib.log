@@ -1,0 +1,9 @@
+Executing: compedklib -s isim -lp /home/hartmann/picsy/EDK/ -zip_models -o /tmp/xil_34TUjs -log_file /home/hartmann/picsy/EDK/hand_follower_sw_2cams_test/pcores//sdi_deserialize_v1_00_a/devl/compedklib.log -X /tmp/xil_34TUjs -c sdi_deserialize_v1_00_a
+
+Scanning repositories
+Collecting HDL files
+Compiling pcores
+Compiling sdi_deserialize_v1_00_a
+ERROR:: Cannot locate library sdi_deserialize_v1_00_a
+ERROR:: File implied by sdi_deserialize.vhdl in logical library sdi_deserialize_v1_00_a in PAO file /home/hartmann/picsy/EDK/hand_follower_sw_2cams_test/pcores/sdi_deserialize_v1_00_a/data/sdi_deserialize_v2_1_0.pao not found.
+Compilation completed, 2 errors.

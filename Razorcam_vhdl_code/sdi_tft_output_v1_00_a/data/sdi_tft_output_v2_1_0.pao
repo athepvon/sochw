@@ -1,0 +1,15 @@
+##############################################################################
+## Filename:          /home/mmefenza/Documents/FPGALINUX/GigaBee_XC6LX-Axi_lite/PLB/pcores/sdi_tft_output_v1_00_a/data/sdi_tft_output_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Sat Apr  6 06:54:14 2013 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib sdi_tft_output_v1_00_a command_lookup vhdl
+lib sdi_tft_output_v1_00_a master_interface vhdl
+lib sdi_tft_output_v1_00_a pixel_command_lookup vhdl
+lib sdi_tft_output_v1_00_a spi_interface vhdl
+lib sdi_tft_output_v1_00_a tft vhdl
+lib sdi_tft_output_v1_00_a fifo_32_to_8 vhdl
+lib sdi_tft_output_v1_00_a fifo_64_to_8 vhdl
+lib sdi_tft_output_v1_00_a synth_Bram vhdl
+lib sdi_tft_output_v1_00_a sdi_tft_output vhdl

@@ -1,0 +1,45 @@
+###################################################################
+##
+## Name     : picsyi2c_imagesensor_light
+## Desc     : Microprocessor Peripheral Description
+## By       : University of Potsdam - Department of Computer Sceince 
+###################################################################
+
+BEGIN picsyi2c_imagesensor_light
+
+## Peripheral Options
+OPTION IPTYPE = PERIPHERAL
+OPTION IMP_NETLIST = TRUE
+OPTION HDL = VHDL
+OPTION ALERT = Please refer to the picsyi2c_imagesensor_light_v1_00_a data sheet for details.
+OPTION LAST_UPDATED = 10.1.2
+OPTION USAGE_LEVEL = BASE_USER
+OPTION ARCH_SUPPORT_MAP = (virtex4fx=PREFERRED)
+OPTION IP_GROUP = MICROBLAZE:PPC:USER
+OPTION DESC = PICSY EXTENSION CAMERA I2C LIGHT USING MUX
+
+IO_INTERFACE IO_IF = picsyi2c_imagesensor_light_0, IO_TYPE = picsyi2c_imagesensor_light_V1
+
+## Bus Interfaces
+#BUS_INTERFACE BUS = STREAM_OUT, BUS_TYPE = INITIATOR, BUS_STD = DATASTREAM
+
+## Generics for VHDL or Parameters for Verilog
+PARAMETER C_RECOMPILE = 0, DT = INTEGER, VALUES = (0= AGAIN, 1= ONCE_AGAIN)
+PARAMETER C_DWIDTH = 32, DT = INTEGER, RANGE = (32, 64, 128)
+PARAMETER C_NUM_CONFIG_REGS = 2, DT = INTEGER, ASSIGNMENT = CONSTANT
+PARAMETER C_NUM_STATUS_REGS = 1, DT = INTEGER, ASSIGNMENT = CONSTANT
+
+
+## Peripheral ports
+PORT clk = "", DIR = I, SIGIS = Clk
+PORT rst = "", DIR = I, SIGIS = Rst
+PORT I2C_SDA = "", DIR = IO, THREE_STATE = TRUE, TRI_I = I2C_SDA_I, TRI_O = I2C_SDA_O, TRI_T = I2C_SDA_T, PERMIT = BASE_USER, DESC = 'Serial data bus', IO_IF = picsyi2c_imagesensor_light_0, IO_IS = I2C_SRL_DATA
+PORT I2C_SDA_I = "", DIR = I
+PORT I2C_SDA_O = "", DIR = O
+PORT I2C_SDA_T = "", DIR = O
+PORT I2C_SCL = "", DIR = O, PERMIT = BASE_USER, DESC = 'Clock for serial interface', IO_IF = picsyi2c_imagesensor_light_0, IO_IS = I2C_SRL_CLK
+PORT I2C_SEL0 = "", DIR = O
+PORT I2C_SEL1 = "", DIR = O
+PORT config_reg = "", DIR = I, VEC=[(C_DWIDTH*C_NUM_CONFIG_REGS-1):0]
+PORT status_reg = "", DIR = O, VEC=[(C_DWIDTH*C_NUM_STATUS_REGS-1):0]
+END

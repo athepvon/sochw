@@ -1,0 +1,66 @@
+HDL language for the peripheral (top level) design unit sdi_deserialize is vhdl
+...
+INFO:MDT - Create temparary xst project file:
+   /home/hartmann/picsy/EDK/hand_follower_sw_2cams_test/pcores/sdi_deserialize.p
+   rj
+Compiling vhdl file
+"/home/hartmann/picsy/EDK/hand_follower_sw_2cams_test/pcores/sdi_deserialize_v1_
+00_a/hdl/vhdl/sdi_deserialize.vhdl" in Library sdi_deserialize_v1_00_a.
+Entity <sdi_deserialize> compiled.
+Entity <sdi_deserialize> (Architecture <arch>) compiled.
+
+
+Analyzing HDL attributes ...
+INFO:MDT - IPTYPE set to value : PERIPHERAL
+INFO:MDT - IMP_NETLIST set to value : TRUE
+INFO:MDT - HDL set to value : VHDL
+Copying file sdi_deserialize.vhdl to
+/home/hartmann/picsy/EDK/hand_follower_sw_2cams_test/pcores/sdi_deserialize_v1_0
+0_a/hdl/vhdl/ ...
+
+Simulation Library Compilation Wizard Xilinx EDK 10.1.03 Build EDK_K_SP3.6
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+
+
+-- Scanning repositories                    1  % complete,   0 errors
+-- Collecting HDL files                     5  % complete,   0 errors
+-- HDL files collected for 20 pcores        14 % complete,   0 errors
+-- HDL files collected for 32 pcores        20 % complete,   0 errors
+-- Compiling pcores                         20 % complete,   0 errors
+-- Compiling sdi_deserialize_v1_00_a        99 % complete,   0 errors
+-- Compilation completed, 2 errors.         100% complete,   2 errors
+See
+/home/hartmann/picsy/EDK/hand_follower_sw_2cams_test/pcores//sdi_deserialize_v1_
+00_a/devl/compedklib.log for execution log.
+ISim simulation model generated successfully...
+
+Thank you for using Create and Import Peripheral Wizard! Please find your
+imported peripheral under
+/home/hartmann/picsy/EDK/hand_follower_sw_2cams_test/pcores/sdi_deserialize_v1_0
+0_a.
+
+Summary:
+
+  Logical library     : sdi_deserialize_v1_00_a
+  Version             : 1.00.a
+  Bus interface(s)    : None
+
+The following sub-directories will be created:
+
+  - sdi_deserialize_v1_00_a/data
+  - sdi_deserialize_v1_00_a/hdl
+  - sdi_deserialize_v1_00_a/hdl/vhdl
+
+
+The following HDL source files will be copied into the
+sdi_deserialize_v1_00_a/hdl/vhdl directory:
+
+  - sdi_deserialize.vhdl
+
+The following files will be created under the sdi_deserialize_v1_00_a/data
+directory:
+
+  - sdi_deserialize_v2_1_0.mpd
+  - sdi_deserialize_v2_1_0.pao
+
+
