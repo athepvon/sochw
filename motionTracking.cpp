@@ -35,6 +35,9 @@ int FrameCount = 0;
 int sourceFPS;
 /* create a vector to store the beginning and ending points for the speed calc. */
 Point middlePoints[2] = {Point(0,0), Point(0,0)};
+/*pixels to meters conversion metric: 177pixels/2ft = 177pixels/2*0.3048meters
+ = 290.354pixels/meter.  meters/pixel 1/290.354 */
+float Pix2meters = 290.354;
 //int to string helper function
 string intToString(int number){
 
@@ -81,6 +84,7 @@ void searchForMovement(Mat thresholdImage, Mat &cameraFeed){
 			middlePoints[1] = Point(xpos, ypos);
 			double distance = cv::norm(middlePoints[1] - middlePoints[0]);
 			cout << "Pixel distance in one second: " << distance << endl;
+			cout << "Meters per second: " << distance / Pix2meters << endl;
 		}
 	}
 	//make some temp x and y variables so we dont have to type out so much
@@ -116,13 +120,13 @@ int main(){
 	//thresholded difference image (for use in findContours() function)
 	Mat thresholdImage;
 	//video capture object.
-	VideoCapture capture;
+	VideoCapture capture(0);
 
 	while(1){
 
 		//we can loop the video by re-opening the capture every time the video reaches its last frame
 
-		capture.open("bouncingBall.avi");
+		//capture.open("bouncingBall.avi");
 
 		if(!capture.isOpened()){
 			cout<<"ERROR ACQUIRING VIDEO FEED\n";
@@ -130,15 +134,16 @@ int main(){
 			return -1;
 		}
 		/*calculate time by fps of video */
-		sourceFPS = capture.get(CV_CAP_PROP_FPS);
-
+		/*sourceFPS = capture.get(CV_CAP_PROP_FPS);*/
+		//sourceFPS = static_cast<int>(capture.get(CV_CAP_PROP_FPS));
 		//check if the video has reach its last frame.
 		//we add '-1' because we are reading two frames from the video at a time.
 		//if this is not included, we get a memory error!
-		while(capture.get(CV_CAP_PROP_POS_FRAMES)<capture.get(CV_CAP_PROP_FRAME_COUNT)-1){
+		/*while(capture.get(CV_CAP_PROP_POS_FRAMES)<capture.get(CV_CAP_PROP_FRAME_COUNT)-1){*/
 
 			//read first frame
-			capture.read(frame1);
+			/*capture.read(frame1);*/
+			capture >> frame1;
 			FrameCount++;
 			//convert frame1 to gray scale for frame differencing
 			cv::cvtColor(frame1, grayImage1, COLOR_BGR2GRAY);
@@ -221,9 +226,10 @@ int main(){
 			}
 
 
-		}
+		/*}*/
 		//release the capture before re-opening and looping again.
-		capture.release();
+		/*capture.release();*/
+
 	}
 
 	return 0;
