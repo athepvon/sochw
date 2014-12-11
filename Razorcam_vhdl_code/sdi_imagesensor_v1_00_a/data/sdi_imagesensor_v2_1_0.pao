@@ -1,0 +1,6 @@
+
+
+lib sdi_imagesensor_v1_00_a sdi_imagesensor vhdl
+lib sdi_imagesensor_v1_00_a imagesensor vhdl
+lib sdi_imagesensor_v1_00_a fifo_80_to_80 vhdl
+

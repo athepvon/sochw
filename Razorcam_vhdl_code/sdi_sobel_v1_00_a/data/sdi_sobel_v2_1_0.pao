@@ -1,0 +1,9 @@
+##############################################################################
+## Filename:          /home/hartmann/picsy/EDK/harris_corner/pcores/sdi_sobel_v1_00_a/data/sdi_sobel_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Fri Mar 12 12:17:32 2010 (by Create and Import Peripheral Wizard)
+##############################################################################
+lib sdi_sobel_v1_00_a fifo_generator_v4_4_8_16 vhdl
+lib sdi_sobel_v1_00_a fifo_generator_v4_4_16_8 vhdl
+lib sdi_sobel_v1_00_a BIT8_RAM vhdl
+lib sdi_sobel_v1_00_a sdi_sobel vhdl
