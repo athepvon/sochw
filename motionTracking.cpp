@@ -32,7 +32,7 @@ int theObject[2] = {0,0};
 Rect objectBoundingRectangle = Rect(0,0,0,0);
 /* count the frames and keep track of the fps of the source video */
 int FrameCount = 0;
-int sourceFPS;
+int sourceFPS ;
 /* create a vector to store the beginning and ending points for the speed calc. */
 Point middlePoints[2] = {Point(0,0), Point(0,0)};
 /*pixels to meters conversion metric: 177pixels/2ft = 177pixels/2*0.3048meters
@@ -121,7 +121,7 @@ int main(){
 	Mat thresholdImage;
 	//video capture object.
 	VideoCapture capture(0);
-
+	//CvCapture *capture=cvCaptureFromCAM(0); 
 	while(1){
 
 		//we can loop the video by re-opening the capture every time the video reaches its last frame
@@ -134,8 +134,9 @@ int main(){
 			return -1;
 		}
 		/*calculate time by fps of video */
-		/*sourceFPS = capture.get(CV_CAP_PROP_FPS);*/
+		sourceFPS = capture.get(CV_CAP_PROP_FPS);
 		//sourceFPS = static_cast<int>(capture.get(CV_CAP_PROP_FPS));
+	//	sourceFPS = cvGetCaptureProperty( capture, CV_CAP_PROP_FPS);
 		//check if the video has reach its last frame.
 		//we add '-1' because we are reading two frames from the video at a time.
 		//if this is not included, we get a memory error!
