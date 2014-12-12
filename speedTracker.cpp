@@ -119,4 +119,15 @@ int main(int argc, char *argv[])
 		    cvWaitKey(10);
 		#endif
 	}
+	
+	//make sure to release IplImages before ending program
+	cvReleaseImage( & framed);
+	cvReleaseImage( & framein);
+	cvReleaseImage( & framein1);
+	cvReleaseImage( & framer1);
+	//cvReleaseImage( & imgHSV); //currently not being used
+	//cvReleaseImage( & h); //currently not being used
+	//cvReleaseImage( & s); //currently not being used
+	//cvReleaseImage( & framer); //currently not being used
+	
 }
