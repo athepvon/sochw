@@ -32,12 +32,13 @@ int theObject[2] = {0,0};
 Rect objectBoundingRectangle = Rect(0,0,0,0);
 /* count the frames and keep track of the fps of the source video */
 int FrameCount = 0;
-int sourceFPS ;
+int sourceFPS = 30;
 /* create a vector to store the beginning and ending points for the speed calc. */
 Point middlePoints[2] = {Point(0,0), Point(0,0)};
 /*pixels to meters conversion metric: 177pixels/2ft = 177pixels/2*0.3048meters
  = 290.354pixels/meter.  meters/pixel 1/290.354 */
 float Pix2meters = 290.354;
+double meter;
 //int to string helper function
 string intToString(int number){
 
@@ -78,13 +79,14 @@ void searchForMovement(Mat thresholdImage, Mat &cameraFeed){
 
 		//update the objects positions by changing the 'theObject' array values
 		theObject[0] = xpos , theObject[1] = ypos;
-		if (FrameCount > sourceFPS) {
+		if (FrameCount > (sourceFPS/4)) {
 			FrameCount = 0;
 			middlePoints[0] = middlePoints[1];
 			middlePoints[1] = Point(xpos, ypos);
 			double distance = cv::norm(middlePoints[1] - middlePoints[0]);
+			::meter = distance / Pix2meters;
 			cout << "Pixel distance in one second: " << distance << endl;
-			cout << "Meters per second: " << distance / Pix2meters << endl;
+			cout << "Meters per second: " << ::meter << endl;
 		}
 	}
 	//make some temp x and y variables so we dont have to type out so much
@@ -121,7 +123,7 @@ int main(){
 	Mat thresholdImage;
 	//video capture object.
 	VideoCapture capture(0);
-	//CvCapture *capture=cvCaptureFromCAM(0); 
+
 	while(1){
 
 		//we can loop the video by re-opening the capture every time the video reaches its last frame
@@ -134,9 +136,8 @@ int main(){
 			return -1;
 		}
 		/*calculate time by fps of video */
-		sourceFPS = capture.get(CV_CAP_PROP_FPS);
+		/*sourceFPS = capture.get(CV_CAP_PROP_FPS);*/
 		//sourceFPS = static_cast<int>(capture.get(CV_CAP_PROP_FPS));
-	//	sourceFPS = cvGetCaptureProperty( capture, CV_CAP_PROP_FPS);
 		//check if the video has reach its last frame.
 		//we add '-1' because we are reading two frames from the video at a time.
 		//if this is not included, we get a memory error!
@@ -187,6 +188,11 @@ int main(){
 			{
 				searchForMovement(thresholdImage,frame1);
 			}
+			std::string output = "Meters per second: " + std::to_string(::meter);
+			int baseLine = 0;
+			Size textSize = getTextSize(output, 1, 1, 1, &baseLine);
+			Point textOrigin(frame1.cols - 2*textSize.width - 10, frame1.rows - 2*baseLine - 10);	
+			putText(frame1, output, textOrigin, CV_FONT_HERSHEY_SIMPLEX, 1, 8);
 			//show our captured frame
 			imshow("Frame1",frame1);
 			//check to see if a button has been pressed.
