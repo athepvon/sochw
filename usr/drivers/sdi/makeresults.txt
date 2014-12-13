@@ -1,0 +1,1375 @@
+make -C /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/linux-te-3.9 M=/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi modules ARCH=arm CROSS_COMPILE=arm-xilinx-linux-gnueabi-
+make[1]: Entering directory `/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/linux-te-3.9'
+  CC [M]  /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.o
+In file included from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:14:0:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:86:1: warning: useless type qualifier in empty declaration [enabled by default]
+ } __attribute__((aligned (8))) ;//__attribute__ ((packed));
+ ^
+In file included from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:14:0:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:419:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Writer_Done();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:420:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Reader_Done();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:421:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Reader_Done_ReaderFIFO_Empty();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:422:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Reader_End_of_Block_Done();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:423:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Writer_End_of_Block_Done();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:424:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Is_MST_Error();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:425:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Is_MST_TIMEOUT_Error();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:426:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Is_Reader_StartAddr_Error();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:427:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Is_Reader_EndAddr_Error();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:428:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Is_Writer_StartAddr_Error();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:429:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Is_Writer_EndAddr_Error();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:430:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ uint32_t PLB_SDI_CONTROLLER_Get_HDWR_Ver();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:431:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ uint32_t PLB_SDI_CONTROLLER_Get_Src_Start_Addr();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:432:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ uint32_t PLB_SDI_CONTROLLER_Get_Src_End_Addr();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:433:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ uint32_t PLB_SDI_CONTROLLER_Get_Dst_Start_Addr();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:434:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ uint32_t PLB_SDI_CONTROLLER_Get_Dst_End_Addr();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:435:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ uint32_t PLB_SDI_CONTROLLER_Get_Tick_Cntr();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:440:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Reset_Reader_FIFO();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:441:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Reset_Writer_FIFO();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:442:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Master_StartReaderWriter_SnapShot();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:443:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Master_StartWriter_SnapShot();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:444:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Master_StartReader_SnapShot();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:445:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Master_StartReaderWriter_Continous();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:446:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Master_StartWriter_Continous();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:447:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Master_StartReader_Continous();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:449:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Reset_ReaderDone_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:450:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Reset_WriterDone_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:451:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Reset_ReaderFlushed_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:452:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Reset_Reader_TriggerAdrr_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:453:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Reset_Writer_TriggerAdrr_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:455:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Check_ReaderDone_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:456:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Check_WriterDone_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:457:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Check_ReaderFlushed_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:458:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Check_ReaderTriggerAdrr_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:459:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Check_WriterTriggerAdrr_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:29:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Check_ReaderDone_Flg() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:33:13: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline void PLB_SDI_CONTROLLER_Reset_ReaderDone_Flg() {
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:37:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Check_WriterDone_Flg() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:41:13: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline void PLB_SDI_CONTROLLER_Reset_WriterDone_Flg() {
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:45:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Check_ReaderFlushed_Flg() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:49:13: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline void PLB_SDI_CONTROLLER_Reset_ReaderFlushed_Flg() {
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:53:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Check_ReaderTriggerAdrr_Flg() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:57:13: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline void PLB_SDI_CONTROLLER_Reset_Reader_TriggerAdrr_Flg() {
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:61:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Check_WriterTriggerAdrr_Flg() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:65:13: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline void PLB_SDI_CONTROLLER_Reset_Writer_TriggerAdrr_Flg() {
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:73:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Writer_Done() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:77:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Reader_Done() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:81:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Reader_Done_ReaderFIFO_Empty() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:85:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Reader_End_of_Block_Done() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:89:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Writer_End_of_Block_Done() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:93:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Is_MST_Error() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:97:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Is_MST_TIMEOUT_Error() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:101:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Is_Reader_StartAddr_Error() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:105:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Is_Reader_EndAddr_Error() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:109:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Is_Writer_StartAddr_Error() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:113:12: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline int PLB_SDI_CONTROLLER_Is_Writer_EndAddr_Error() {
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:117:17: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline uint32_t PLB_SDI_CONTROLLER_Get_HDWR_Ver() {
+                 ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:121:17: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline uint32_t PLB_SDI_CONTROLLER_Get_Src_Start_Addr() {
+                 ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:125:17: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline uint32_t PLB_SDI_CONTROLLER_Get_Src_End_Addr() {
+                 ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:129:17: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline uint32_t PLB_SDI_CONTROLLER_Get_Dst_Start_Addr() {
+                 ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:133:17: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline uint32_t PLB_SDI_CONTROLLER_Get_Dst_End_Addr() {
+                 ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:137:17: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline uint32_t PLB_SDI_CONTROLLER_Get_Tick_Cntr() {
+                 ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:157:13: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline void PLB_SDI_CONTROLLER_Reset_Reader_FIFO() {
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:161:13: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline void PLB_SDI_CONTROLLER_Reset_Writer_FIFO() {
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:165:13: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline void PLB_SDI_CONTROLLER_Master_StartReaderWriter_SnapShot() {
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:171:13: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline void PLB_SDI_CONTROLLER_Master_StartWriter_SnapShot() {
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:177:13: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline void PLB_SDI_CONTROLLER_Master_StartReader_SnapShot() {
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:183:13: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline void PLB_SDI_CONTROLLER_Master_StartReaderWriter_Continous() {
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:189:13: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline void PLB_SDI_CONTROLLER_Master_StartWriter_Continous() {
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.c:195:13: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ inline void PLB_SDI_CONTROLLER_Master_StartReader_Continous() {
+             ^
+  CC [M]  /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.o
+In file included from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:35:0:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:86:1: warning: useless type qualifier in empty declaration [enabled by default]
+ } __attribute__((aligned (8))) ;//__attribute__ ((packed));
+ ^
+In file included from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:35:0:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:419:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Writer_Done();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:420:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Reader_Done();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:421:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Reader_Done_ReaderFIFO_Empty();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:422:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Reader_End_of_Block_Done();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:423:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Writer_End_of_Block_Done();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:424:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Is_MST_Error();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:425:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Is_MST_TIMEOUT_Error();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:426:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Is_Reader_StartAddr_Error();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:427:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Is_Reader_EndAddr_Error();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:428:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Is_Writer_StartAddr_Error();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:429:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Is_Writer_EndAddr_Error();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:430:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ uint32_t PLB_SDI_CONTROLLER_Get_HDWR_Ver();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:431:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ uint32_t PLB_SDI_CONTROLLER_Get_Src_Start_Addr();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:432:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ uint32_t PLB_SDI_CONTROLLER_Get_Src_End_Addr();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:433:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ uint32_t PLB_SDI_CONTROLLER_Get_Dst_Start_Addr();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:434:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ uint32_t PLB_SDI_CONTROLLER_Get_Dst_End_Addr();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:435:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ uint32_t PLB_SDI_CONTROLLER_Get_Tick_Cntr();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:440:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Reset_Reader_FIFO();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:441:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Reset_Writer_FIFO();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:442:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Master_StartReaderWriter_SnapShot();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:443:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Master_StartWriter_SnapShot();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:444:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Master_StartReader_SnapShot();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:445:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Master_StartReaderWriter_Continous();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:446:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Master_StartWriter_Continous();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:447:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Master_StartReader_Continous();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:449:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Reset_ReaderDone_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:450:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Reset_WriterDone_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:451:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Reset_ReaderFlushed_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:452:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Reset_Reader_TriggerAdrr_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:453:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void PLB_SDI_CONTROLLER_Reset_Writer_TriggerAdrr_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:455:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Check_ReaderDone_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:456:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Check_WriterDone_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:457:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Check_ReaderFlushed_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:458:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Check_ReaderTriggerAdrr_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:459:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ int PLB_SDI_CONTROLLER_Check_WriterTriggerAdrr_Flg();
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:71:0: warning: "MINOR" redefined [enabled by default]
+ #define MINOR         0
+ ^
+In file included from include/linux/fs.h:7:0,
+                 from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:5:
+include/linux/kdev_t.h:10:0: note: this is the location of the previous definition
+ #define MINOR(dev) ((unsigned int) ((dev) & MINORMASK))
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'do_io_write_16':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:98:2: warning: 'return' with no value, in function returning non-void [-Wreturn-type]
+  return;
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'do_io_write_32':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:113:2: warning: 'return' with no value, in function returning non-void [-Wreturn-type]
+  return;
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: At top level:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:154:43: warning: 'struct plb_sdi_controller_module' declared inside parameter list [enabled by default]
+         int             (*startup)(struct plb_sdi_controller_module *);
+                                           ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:154:43: warning: its scope is only this definition or declaration, which is probably not what you want [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:155:44: warning: 'struct plb_sdi_controller_module' declared inside parameter list [enabled by default]
+         void            (*shutdown)(struct plb_sdi_controller_module *);
+                                            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:156:48: warning: 'struct plb_sdi_controller_module' declared inside parameter list [enabled by default]
+         void            (*flush_buffer)(struct plb_sdi_controller_module *);
+                                                ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:161:37: warning: 'struct plb_sdi_controller_module' declared inside parameter list [enabled by default]
+          const char *(*type)(struct plb_sdi_controller_module *);
+                                     ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:167:50: warning: 'struct plb_sdi_controller_module' declared inside parameter list [enabled by default]
+         void            (*release_module)(struct plb_sdi_controller_module *);
+                                                  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:173:50: warning: 'struct plb_sdi_controller_module' declared inside parameter list [enabled by default]
+         int             (*request_module)(struct plb_sdi_controller_module *);
+                                                  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:174:49: warning: 'struct plb_sdi_controller_module' declared inside parameter list [enabled by default]
+         void            (*config_module)(struct plb_sdi_controller_module *, int);
+                                                 ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:176:41: warning: 'struct plb_sdi_controller_module' declared inside parameter list [enabled by default]
+         int             (*ioctl)(struct plb_sdi_controller_module *, unsigned int, unsigned long);
+                                         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:270:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void configureSDIController()
+      ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'configureSDIController':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:273:7: warning: passing argument 1 of 'do_io_read16' discards 'volatile' qualifier from pointer target type [enabled by default]
+       uint16_t hw_v = chage_byte_order_16(do_io_read16( &(hw_regs->hw_version)) );
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:86:15: note: expected 'void *' but argument is of type 'volatile uint16_t *'
+ unsigned long do_io_read16 (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:274:7: warning: passing argument 1 of 'do_io_read16' discards 'volatile' qualifier from pointer target type [enabled by default]
+       uint16_t hw_m = chage_byte_order_16(do_io_read16( &(hw_regs->magic)) );
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:86:15: note: expected 'void *' but argument is of type 'volatile uint16_t *'
+ unsigned long do_io_read16 (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:276:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t *' [-Wformat=]
+       printk(KERN_INFO "dst buf: 0x%08X\n", dst_buffer);
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:289:8: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+        do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + BUFFER_SIZE)), &(hw_regs->src_start_addr));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:290:8: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+        do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (2*BUFFER_SIZE-1))), &(hw_regs->src_end_addr));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:291:8: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+        do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (2*BUFFER_SIZE-1))), &(hw_regs->src_trigger_addr));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:293:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)DMA_MEM_BASEADDR) , &(hw_regs->dest_start_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:294:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (BUFFER_SIZE-1))), &(hw_regs->dest_end_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:295:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (BUFFER_SIZE-1))), &(hw_regs->dest_trigger_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:300:8: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+        do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + 3*BUFFER_SIZE )), &(hw_regs->src_start_addr));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:301:8: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+        do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (4*BUFFER_SIZE-1))), &(hw_regs->src_end_addr));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:302:8: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+        do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (4*BUFFER_SIZE-1))), &(hw_regs->src_trigger_addr));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:304:8: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+        do_io_write_32(chage_byte_order_32((unsigned long)DMA_MEM_BASEADDR+ 2*BUFFER_SIZE), &(hw_regs->dest_start_addr));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:305:8: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+        do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR +(3*BUFFER_SIZE-1))), &(hw_regs->dest_end_addr));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:306:8: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+        do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (3*BUFFER_SIZE-1))), &(hw_regs->dest_trigger_addr));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:309:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_INFO "Copy to: 0x%08X-0x%08X \n",  chage_byte_order_32(do_io_read( &(hw_regs->dest_start_addr))),
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:310:4: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+    chage_byte_order_32(do_io_read( &(hw_regs->dest_end_addr))) );
+    ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:310:4: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+    chage_byte_order_32(do_io_read( &(hw_regs->dest_end_addr))) );
+    ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:310:4: warning: format '%X' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat=]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:311:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_INFO "Read from: 0x%08X-0x%08X\n",  chage_byte_order_32(do_io_read( &(hw_regs->src_start_addr))),
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:312:4: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+    chage_byte_order_32(do_io_read( &(hw_regs->src_end_addr))) );
+    ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:312:4: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+    chage_byte_order_32(do_io_read( &(hw_regs->src_end_addr))) );
+    ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:312:4: warning: format '%X' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat=]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'plb_sdi_controller_isr':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:319:41: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+         PLB_SDI_CONTROLLER_Intr_Handler((unsigned long long) module->membase);
+                                         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:319:9: warning: passing argument 1 of 'PLB_SDI_CONTROLLER_Intr_Handler' makes pointer from integer without a cast [enabled by default]
+         PLB_SDI_CONTROLLER_Intr_Handler((unsigned long long) module->membase);
+         ^
+In file included from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:35:0:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:486:6: note: expected 'void *' but argument is of type 'long long unsigned int'
+ void PLB_SDI_CONTROLLER_Intr_Handler(void * baseaddr_p);
+      ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'plb_sdi_controller_startup':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:329:38: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  PLB_SDI_CONTROLLER_DisableInterrupt((unsigned long long) module->membase);
+                                      ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:329:2: warning: passing argument 1 of 'PLB_SDI_CONTROLLER_DisableInterrupt' makes pointer from integer without a cast [enabled by default]
+  PLB_SDI_CONTROLLER_DisableInterrupt((unsigned long long) module->membase);
+  ^
+In file included from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:35:0:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:487:6: note: expected 'void *' but argument is of type 'long long unsigned int'
+ void PLB_SDI_CONTROLLER_DisableInterrupt(void * baseaddr_p);
+      ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:338:44: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+         PLB_SDI_CONTROLLER_EnableInterrupt((unsigned long long) module->membase);
+                                            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:338:9: warning: passing argument 1 of 'PLB_SDI_CONTROLLER_EnableInterrupt' makes pointer from integer without a cast [enabled by default]
+         PLB_SDI_CONTROLLER_EnableInterrupt((unsigned long long) module->membase);
+         ^
+In file included from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:35:0:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:472:6: note: expected 'void *' but argument is of type 'long long unsigned int'
+ void PLB_SDI_CONTROLLER_EnableInterrupt(void * baseaddr_p);
+      ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'plb_sdi_controller_shutdown':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:346:38: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  PLB_SDI_CONTROLLER_DisableInterrupt((unsigned long long) module->membase);
+                                      ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:346:2: warning: passing argument 1 of 'PLB_SDI_CONTROLLER_DisableInterrupt' makes pointer from integer without a cast [enabled by default]
+  PLB_SDI_CONTROLLER_DisableInterrupt((unsigned long long) module->membase);
+  ^
+In file included from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:35:0:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:487:6: note: expected 'void *' but argument is of type 'long long unsigned int'
+ void PLB_SDI_CONTROLLER_DisableInterrupt(void * baseaddr_p);
+      ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'plb_sdi_controller_request_module':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:369:50: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+    module, (unsigned long long) module->mapbase, (unsigned long long) module-> dma_membase);
+                                                  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:385:9: warning: passing argument 1 of 'PLB_SDI_CONTROLLER_Set_BaseAddress' makes integer from pointer without a cast [enabled by default]
+         PLB_SDI_CONTROLLER_Set_BaseAddress(module->membase);
+         ^
+In file included from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:35:0:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_controller.h:418:6: note: expected 'uint32_t' but argument is of type 'unsigned char *'
+ void PLB_SDI_CONTROLLER_Set_BaseAddress(uint32_t BaseAddress);
+      ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:393:2: warning: passing argument 1 of '__arm_ioremap' makes integer from pointer without a cast [enabled by default]
+  module->dma_membase = ioremap(module->dma_membase, DMA_MEM_REGION);
+  ^
+In file included from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:28:0:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/linux-te-3.9/arch/arm/include/asm/io.h:137:22: note: expected 'long unsigned int' but argument is of type 'unsigned char *'
+ extern void __iomem *__arm_ioremap(unsigned long, size_t, unsigned int);
+                      ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:409:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+    module, (unsigned long long) module->membase, (unsigned long long) module-> dma_membase);
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:409:50: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+    module, (unsigned long long) module->membase, (unsigned long long) module-> dma_membase);
+                                                  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:367:13: warning: unused variable 'ret' [-Wunused-variable]
+         int ret;
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: At top level:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:420:2: warning: initialization from incompatible pointer type [enabled by default]
+  .startup = plb_sdi_controller_startup,
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:420:2: warning: (near initialization for 'plb_sdi_controller_ops.startup') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:421:2: warning: initialization from incompatible pointer type [enabled by default]
+  .shutdown = plb_sdi_controller_shutdown,
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:421:2: warning: (near initialization for 'plb_sdi_controller_ops.shutdown') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:422:9: warning: initialization from incompatible pointer type [enabled by default]
+         .type  = plb_sdi_controller_type,
+         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:422:9: warning: (near initialization for 'plb_sdi_controller_ops.type') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:423:2: warning: initialization from incompatible pointer type [enabled by default]
+  .release_module = plb_sdi_controller_release_module,
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:423:2: warning: (near initialization for 'plb_sdi_controller_ops.release_module') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:424:2: warning: initialization from incompatible pointer type [enabled by default]
+  .request_module = plb_sdi_controller_request_module,
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:424:2: warning: (near initialization for 'plb_sdi_controller_ops.request_module') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:425:2: warning: initialization from incompatible pointer type [enabled by default]
+  .config_module = plb_sdi_controller_config_module,
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:425:2: warning: (near initialization for 'plb_sdi_controller_ops.config_module') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'plb_data_ioctl':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:508:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + BUFFER_SIZE)), &(hw_regs->src_start_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:509:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (2*BUFFER_SIZE-1))), &(hw_regs->src_end_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:510:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (2*BUFFER_SIZE-1))), &(hw_regs->src_trigger_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:517:25: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                         &(hw_regs->control_status_reg));
+                         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:519:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_READER_START_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:520:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:520:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:522:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_READER_END_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:523:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:523:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:528:11: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+           while (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_READER_BUSY_MASK) {//
+           ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:545:17: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                 do_io_write_32(chage_byte_order_32((unsigned long)0), &(hw_regs->control_status_reg));
+                 ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:549:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   retval = __put_user(chage_byte_order_32(do_io_read(&(hw_regs->tick_counter))), (unsigned long __user *)arg);
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:569:25: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                         do_io_write_32(chage_byte_order_32((unsigned long)0), &(hw_regs->pu_control_status_regs[0]));
+                         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:575:26: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                          do_io_write_32(chage_byte_order_32((unsigned long)DMA_MEM_BASEADDR) , &(hw_regs->dest_start_addr));
+                          ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:576:11: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+           do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (BUFFER_SIZE-1))), &(hw_regs->dest_end_addr));
+           ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:577:15: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+               do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (BUFFER_SIZE-1))), &(hw_regs->dest_trigger_addr));
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:582:19: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                   &(hw_regs->control_status_reg));
+                   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:584:4: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+    if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_WRITER_START_ADDR_MASK){
+    ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:585:8: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+        printk(KERN_ERR "Error(SDI_CONTROLLER): Writer Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_start_addr)));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:585:8: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+        printk(KERN_ERR "Error(SDI_CONTROLLER): Writer Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_start_addr)));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:587:4: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+    if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_WRITER_END_ADDR_MASK){
+    ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:588:8: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+        printk(KERN_ERR "Error(SDI_CONTROLLER): Writer End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_end_addr)));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:588:8: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+        printk(KERN_ERR "Error(SDI_CONTROLLER): Writer End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_end_addr)));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:591:26: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+                          while ((chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_WRITER_BUSY_MASK  )){//& (i<5000)
+                          ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:605:26: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                          do_io_write_32(chage_byte_order_32((unsigned long)0), &(hw_regs->control_status_reg));
+                          ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:609:4: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+    retval = __put_user(chage_byte_order_32(do_io_read(&(hw_regs->tick_counter))), (unsigned long __user *)arg);
+    ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:629:25: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                         do_io_write_32(chage_byte_order_32((unsigned long)0xFFFFFFFF), &(hw_regs->pu_control_status_regs[0]));
+                         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:635:26: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                          do_io_write_32(chage_byte_order_32((unsigned long)DMA_MEM_BASEADDR + 2*BUFFER_SIZE) , &(hw_regs->dest_start_addr));
+                          ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:636:11: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+           do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (3*BUFFER_SIZE-1))), &(hw_regs->dest_end_addr));
+           ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:637:15: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+               do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (3*BUFFER_SIZE-1))), &(hw_regs->dest_trigger_addr));
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:642:19: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                   &(hw_regs->control_status_reg));
+                   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:644:4: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+    if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_WRITER_START_ADDR_MASK){
+    ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:645:8: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+        printk(KERN_ERR "Error(SDI_CONTROLLER): Writer Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_start_addr)));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:645:8: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+        printk(KERN_ERR "Error(SDI_CONTROLLER): Writer Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_start_addr)));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:647:4: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+    if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_WRITER_END_ADDR_MASK){
+    ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:648:8: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+        printk(KERN_ERR "Error(SDI_CONTROLLER): Writer End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_end_addr)));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:648:8: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+        printk(KERN_ERR "Error(SDI_CONTROLLER): Writer End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_end_addr)));
+        ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:650:4: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+    while ((chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_WRITER_BUSY_MASK  ) && (!PLB_SDI_CONTROLLER_Check_WriterDone_Flg())){//& (i<5000)
+    ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:664:26: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                          do_io_write_32(chage_byte_order_32((unsigned long)0), &(hw_regs->control_status_reg));
+                          ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:667:4: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+    retval = __put_user(chage_byte_order_32(do_io_read(&(hw_regs->tick_counter))), (unsigned long __user *)arg);
+    ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:680:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + BUFFER_SIZE)), &(hw_regs->src_start_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:681:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (2*BUFFER_SIZE-1))), &(hw_regs->src_end_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:682:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (2*BUFFER_SIZE-1))), &(hw_regs->src_trigger_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:684:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)DMA_MEM_BASEADDR), &(hw_regs->dest_start_addr)); // image sensor start address
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:685:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (BUFFER_SIZE-1))), &(hw_regs->dest_end_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:686:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (BUFFER_SIZE-1))), &(hw_regs->dest_trigger_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:694:25: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                         &(hw_regs->control_status_reg));
+                         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:696:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_READER_START_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:697:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:697:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:699:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_READER_END_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:700:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:700:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:703:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_WRITER_START_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:704:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:704:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:706:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_WRITER_END_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:707:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:707:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:710:10: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+          while (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_READER_BUSY_MASK)//PLB_SDI_CONTROLLER_WRITER_BUSY_MASK) 
+          ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:713:11: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+           if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_READER_BUSY_MASK)//PLB_SDI_CONTROLLER_WRITER_BUSY_MASK)
+           ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:720:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   retval = __put_user(chage_byte_order_32(do_io_read(&(hw_regs->tick_counter))), (unsigned long __user *)arg);
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:734:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + BUFFER_SIZE)), &(hw_regs->src_start_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:735:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (5*BUFFER_SIZE-1))), &(hw_regs->src_end_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:736:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (5*BUFFER_SIZE-1))), &(hw_regs->src_trigger_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:743:25: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                         &(hw_regs->control_status_reg));
+                         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:745:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_READER_START_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:746:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:746:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:748:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_READER_END_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:749:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:749:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:764:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)DMA_MEM_BASEADDR), &(hw_regs->dest_start_addr)); // image sensor start address
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:765:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (BUFFER_SIZE-1))), &(hw_regs->dest_end_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:766:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (BUFFER_SIZE-1))), &(hw_regs->dest_trigger_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:773:25: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                         &(hw_regs->control_status_reg));
+                         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:775:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_WRITER_START_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:776:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:776:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:778:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_WRITER_END_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:779:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:779:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:797:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + BUFFER_SIZE)), &(hw_regs->src_start_addr)); // VGA
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:798:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (5*BUFFER_SIZE-1))), &(hw_regs->src_end_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:799:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (5*BUFFER_SIZE-1))), &(hw_regs->src_trigger_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:801:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)DMA_MEM_BASEADDR), &(hw_regs->dest_start_addr)); // image sensor start address
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:802:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (BUFFER_SIZE-1))), &(hw_regs->dest_end_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:803:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (BUFFER_SIZE-1))), &(hw_regs->dest_trigger_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:811:25: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                         &(hw_regs->control_status_reg));
+                         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:813:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_READER_START_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:814:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:814:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:816:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_READER_END_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:817:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:817:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:820:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_WRITER_START_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:821:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:821:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:823:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_WRITER_END_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:824:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:824:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:845:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)DMA_MEM_BASEADDR), &(hw_regs->src_start_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:846:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (BUFFER_SIZE-1))), &(hw_regs->src_end_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:847:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (BUFFER_SIZE-1))), &(hw_regs->src_trigger_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:849:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)DMA_MEM_BASEADDR), &(hw_regs->dest_start_addr)); // image sensor start address
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:850:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (BUFFER_SIZE-1))), &(hw_regs->dest_end_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:851:3: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+   do_io_write_32(chage_byte_order_32((unsigned long)(DMA_MEM_BASEADDR + (BUFFER_SIZE-1))), &(hw_regs->dest_trigger_addr));
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:859:25: warning: passing argument 2 of 'do_io_write_32' discards 'volatile' qualifier from pointer target type [enabled by default]
+                         &(hw_regs->control_status_reg));
+                         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:109:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_write_32 (unsigned long val, void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:861:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_READER_START_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:862:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:862:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:864:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_READER_END_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:865:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:865:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Reader End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->src_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:868:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_WRITER_START_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:869:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:869:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer Start Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_start_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:871:3: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+   if (chage_byte_order_32(do_io_read(&(hw_regs->control_status_reg))) & PLB_SDI_CONTROLLER_ERROR_WRITER_END_ADDR_MASK){
+   ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:872:7: warning: passing argument 1 of 'do_io_read' discards 'volatile' qualifier from pointer target type [enabled by default]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:101:15: note: expected 'void *' but argument is of type 'volatile uint32_t *'
+ unsigned long do_io_read (void *address)
+               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:872:7: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+       printk(KERN_ERR "Error(SDI_CONTROLLER): Writer End Address is not alligned! [0x%08X]\n", do_io_read(&(hw_regs->dest_end_addr)));
+       ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:444:11: warning: unused variable 'dma_buffer_size' [-Wunused-variable]
+  uint32_t dma_buffer_size = DMA_MEM_BASEADDR; //DMA_MEM_REGION;
+           ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:442:36: warning: unused variable 'stamp_n' [-Wunused-variable]
+  unsigned long i; unsigned long j, stamp_n;
+                                    ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:442:33: warning: unused variable 'j' [-Wunused-variable]
+  unsigned long i; unsigned long j, stamp_n;
+                                 ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'plb_sdi_controller_add_one_module':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1048:9: warning: passing argument 1 of 'module->ops->config_module' from incompatible pointer type [enabled by default]
+         module->ops->config_module(module, 0);
+         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1048:9: note: expected 'struct plb_sdi_controller_module *' but argument is of type 'struct plb_sdi_controller_module *'
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1049:9: warning: passing argument 1 of 'module->ops->type' from incompatible pointer type [enabled by default]
+         if (!module->ops->type(module))
+         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1049:9: note: expected 'struct plb_sdi_controller_module *' but argument is of type 'struct plb_sdi_controller_module *'
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1052:9: warning: passing argument 1 of 'module->ops->startup' from incompatible pointer type [enabled by default]
+         ret = module->ops->startup(module);
+         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1052:9: note: expected 'struct plb_sdi_controller_module *' but argument is of type 'struct plb_sdi_controller_module *'
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1045:42: warning: unused variable 'state' [-Wunused-variable]
+         struct plb_sdi_controller_state *state;
+                                          ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'plb_sdi_controller_remove_one_module':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1070:9: warning: passing argument 1 of 'module->ops->shutdown' from incompatible pointer type [enabled by default]
+         module->ops->shutdown(module);
+         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1070:9: note: expected 'struct plb_sdi_controller_module *' but argument is of type 'struct plb_sdi_controller_module *'
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1071:9: warning: passing argument 1 of 'module->ops->release_module' from incompatible pointer type [enabled by default]
+         module->ops->release_module(module);
+         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1071:9: note: expected 'struct plb_sdi_controller_module *' but argument is of type 'struct plb_sdi_controller_module *'
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1068:41: warning: unused variable 'info' [-Wunused-variable]
+         struct plb_sdi_controller_info *info;
+                                         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1067:42: warning: unused variable 'state' [-Wunused-variable]
+         struct plb_sdi_controller_state *state;
+                                          ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: At top level:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1184:64: warning: 'struct of_device' declared inside parameter list [enabled by default]
+ plb_sdi_controller_of_probe(struct of_device *op, const struct of_device_id *match)
+                                                                ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'plb_sdi_controller_of_probe':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1188:6: warning: unused variable 'irq' [-Wunused-variable]
+  int irq, rc;
+      ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1187:22: warning: unused variable 'id' [-Wunused-variable]
+  const unsigned int *id;
+                      ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1186:18: warning: unused variable 'res' [-Wunused-variable]
+  struct resource res;
+                  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: At top level:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1206:48: warning: 'struct of_device' declared inside parameter list [enabled by default]
+ static int plb_sdi_controller_of_remove(struct of_device *op)
+                                                ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'plb_sdi_controller_of_remove':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1209:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: At top level:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1215:2: warning: initialization from incompatible pointer type [enabled by default]
+  .probe = plb_sdi_controller_of_probe,
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1215:2: warning: (near initialization for 'plb_sdi_controller_of_driver.probe') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1216:2: warning: initialization from incompatible pointer type [enabled by default]
+  .remove = plb_sdi_controller_of_remove,
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1216:2: warning: (near initialization for 'plb_sdi_controller_of_driver.remove') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'plb_sdi_controller_of_register':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1230:7: warning: passing argument 1 of 'platform_driver_register' from incompatible pointer type [enabled by default]
+       return platform_driver_register(&plb_sdi_controller_of_driver);
+       ^
+In file included from include/linux/of_device.h:4:0,
+                 from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:47:
+include/linux/platform_device.h:179:12: note: expected 'struct platform_driver *' but argument is of type 'struct of_platform_driver *'
+ extern int platform_driver_register(struct platform_driver *);
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'plb_sdi_controller_of_unregister':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1236:7: warning: passing argument 1 of 'platform_driver_unregister' from incompatible pointer type [enabled by default]
+       platform_driver_unregister(&plb_sdi_controller_of_driver);
+       ^
+In file included from include/linux/of_device.h:4:0,
+                 from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:47:
+include/linux/platform_device.h:180:13: note: expected 'struct platform_driver *' but argument is of type 'struct of_platform_driver *'
+ extern void platform_driver_unregister(struct platform_driver *);
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: In function 'plb_sdi_controller_init':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1280:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+         unsigned long tmp=0;
+         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1281:2: warning: passing argument 3 of 'plb_data_ioctl' makes integer from pointer without a cast [enabled by default]
+  plb_data_ioctl( NULL, PLB_SDI_CTRL_IOCSHWREGNUM, &tmp); 
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:438:13: note: expected 'long unsigned int' but argument is of type 'long unsigned int *'
+ static long plb_data_ioctl(struct file *file,unsigned int cmd, unsigned long arg)
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1282:2: warning: passing argument 3 of 'plb_data_ioctl' makes integer from pointer without a cast [enabled by default]
+  plb_data_ioctl( NULL, PLB_SDI_CTRL_IOCGHWREG, &tmp); 
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:438:13: note: expected 'long unsigned int' but argument is of type 'long unsigned int *'
+ static long plb_data_ioctl(struct file *file,unsigned int cmd, unsigned long arg)
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1283:2: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printk(KERN_INFO "plb_sdi_ctrl: HW Version:Magic: 0x%08X\n", tmp);
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1292:1: warning: label 'err_of' defined but not used [-Wunused-label]
+ err_of:
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c: At top level:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1316:1: warning: data definition has no type or storage class [enabled by default]
+ EXPORT_NO_SYMBOLS;
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:1316:1: warning: type defaults to 'int' in declaration of 'EXPORT_NO_SYMBOLS' [-Wimplicit-int]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl_main.c:433:13: warning: 'plb_data_intr' defined but not used [-Wunused-function]
+ static void plb_data_intr(int irq, void *dev_id, struct pt_regs *regs)
+             ^
+  LD [M]  /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl.mod.o
+  LD [M]  /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/sdi/plb_sdi_ctrl.ko
+make[1]: Leaving directory `/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/linux-te-3.9'
