@@ -1,0 +1,229 @@
+/*****************************************************************************
+* Filename:          /home/fyonga/Documents/Classes/TA/Embedded_Systems/EDK/RazorCar_Camera_AXI_Sobel/drivers/razorcar_hardware_v1_01_a/src/razorcar_hardware.c
+* Version:           1.01.a
+* Description:       razorcar_hardware Driver Source File
+* Date:              Wed Nov 20 22:10:42 2013 (by Create and Import Peripheral Wizard)
+*****************************************************************************/
+
+
+/***************************** Include Files *******************************/
+#include <linux/types.h>	
+#include "razorcar_hardware.h"
+
+/**************************** Type Definitions and Global Variables *****************************/
+
+/************************** Function Definitions ***************************/
+
+static volatile struct razorcar_hw_regs_t  *razorcar_hw_regs = NULL;  // FIXME: delete
+
+/*****************************************************************************/
+/*void get_size(){
+	xil_printf("size of struct : %d\n", sizeof(struct razorcar_hw_regs_t));
+	xil_printf("size of led : %d\n", sizeof(razorcar_hw_regs->led_enable));
+	xil_printf("size of adc : %d\n", sizeof(razorcar_hw_regs->adc_values));
+	xil_printf("size of steering : %d\n", sizeof(razorcar_hw_regs->steering_values));
+}*/
+
+/****************************************************************************/
+void RazorCar_set_BaseAdress(uint32_t BaseAddress){
+	razorcar_hw_regs = (struct razorcar_hw_regs_t *)(BaseAddress);
+}
+
+/****************************************************************************/
+
+void init_razorcar_platform(uint32_t BaseAddress){
+	RazorCar_set_BaseAdress(BaseAddress);
+	disable_buzzer();                   /* Disable the Horn System */
+	enable_light();                     /* Enable the lights System of the car*/
+	set_driving_mode(AUTO);             /* Set the Driving mode to Automatic -- Default mode*/
+	set_speed(STOP,0);                  /* STOP the Car*/
+	set_steering(STRAIGHT,0);           /* Set the tires to drive straight */
+	//disable_hw_buttons_interrupt();     /* Disable Hardware Buttons Interrupts*/
+	//disable_hw_switches_interrupt();    /* Disable Hardware Switches Interrupts*/
+}
+/**************************** Infrared module *****************************************/
+/*Register 0
+ * 0 - 15  => adc values
+ * 16      => adc busy bit
+ * 24      => adc ready bit
+ */
+
+/*Register 1
+ * 0       => adc start
+ * 8 - 10  => adc channel number
+ */
+
+int get_sensor_values(uint8_t channel)
+{
+ 
+  int distance;
+
+  /* Wait while Infrareds are busy... */
+  while(((razorcar_hw_regs->adc_reg0 & RAZORCAR_HARDWARE_HW_IR_BUSY_MASK) >> 16) == 1);
+
+  /* Send the IR channel number*/
+  razorcar_hw_regs->adc_reg1 = (razorcar_hw_regs->adc_reg1 & RAZORCAR_HARDWARE_HW_IR_CHAN_MASK) + ((channel & 0x7) << 8);
+
+  /* Set Start = 1 -> Activate the Reading process by sending start signal to the micro-controller */
+  razorcar_hw_regs->adc_reg1 = (razorcar_hw_regs->adc_reg1 & RAZORCAR_HARDWARE_HW_IR_START_MASK) + 1;
+
+  /* Wait until the microcontroller starts to receive data from IR... */
+  while(((razorcar_hw_regs->adc_reg0 & RAZORCAR_HARDWARE_HW_IR_BUSY_MASK) >> 16) == 0);
+
+  /* Set Start to 0 while waiting from data */
+  razorcar_hw_regs->adc_reg1 &= RAZORCAR_HARDWARE_HW_IR_START_MASK;
+
+  /*  Wait while getting Infrareds values from the microcontroller ...*/
+  while(((razorcar_hw_regs->adc_reg0 & RAZORCAR_HARDWARE_HW_IR_BUSY_MASK) >> 16) == 1);
+
+  /* Compute the Linear Approximation in cm */
+   //long voltage;
+   //voltage     = (long)((33 * (razorcar_hw_regs->adc_reg0 & RAZORCAR_HARDWARE_HW_IR_VALUES_MASK))/40960);
+  //distance    = (int)(10000 / (357 * voltage + 143));
+   //int voltage;
+   //voltage     = 3.3 * (int)(razorcar_hw_regs->adc_reg0 & RAZORCAR_HARDWARE_HW_IR_VALUES_MASK)/4096;
+   //distance    = (int)(1 / (0.0357 * voltage + 0.0143));
+  distance    = (int)((10000*40960) / (357 * 33 * (razorcar_hw_regs->adc_reg0 & RAZORCAR_HARDWARE_HW_IR_VALUES_MASK) + (143*40960)));
+  return distance;
+}
+/**************************** Lights *****************************************/
+/*Register 2
+ * 0 - 7 => LED Values
+ * 8     => LED enable
+ */
+
+void enable_light(){
+	razorcar_hw_regs->leds_buzzer = (razorcar_hw_regs->leds_buzzer & RAZORCAR_HARDWARE_ENABLE_LIGHT_MASK) +
+									 RAZORCAR_HARDWARE_ENABLE_LIGHT_ID;
+}
+
+void disable_light(){
+	razorcar_hw_regs->leds_buzzer &= RAZORCAR_HARDWARE_ENABLE_LIGHT_MASK;
+}
+
+void set_light(uint8_t mode, uint8_t value){
+	razorcar_hw_regs->leds_buzzer = (razorcar_hw_regs->leds_buzzer & RAZORCAR_HARDWARE_SET_LIGHT_MASK) + (mode & value);
+}
+
+void set_all_light(uint8_t mode){
+	razorcar_hw_regs->leds_buzzer = (razorcar_hw_regs->leds_buzzer & RAZORCAR_HARDWARE_SET_LIGHT_MASK) + mode;
+}
+/**************************** Buzzer *****************************************/
+/* Register 2
+ * 16 - 18 => Sound frequency
+ * 24      => enable Buzzer
+ */
+
+void enable_buzzer(){
+	razorcar_hw_regs->leds_buzzer = (razorcar_hw_regs->leds_buzzer & RAZORCAR_HARDWARE_ENABLE_BUZZER_MASK) +
+									 RAZORCAR_HARDWARE_ENABLE_BUZZER_ID;
+}
+
+void disable_buzzer(){
+	razorcar_hw_regs->leds_buzzer &= RAZORCAR_HARDWARE_ENABLE_BUZZER_MASK;
+}
+
+void set_buzzer(uint8_t frequency){
+	razorcar_hw_regs->leds_buzzer = (razorcar_hw_regs->leds_buzzer & RAZORCAR_HARDWARE_SET_BUZZER_MASK) + ((frequency & 0x7) << 16);
+}
+
+/**************************** Steering & Speed *****************************************/
+/* Register 3
+ * 0 - 7   => Steering inputs bits
+ * 8 - 15  => Speed inputs bits
+ * 16 - 18 => mode
+ */
+void set_steering(uint8_t direction, uint8_t angle){
+	int8_t value;
+	//xil_printf("Register state before :%X\n", razorcar_hw_regs->steering_speed);
+	switch (direction) {
+		case STRAIGHT:	value = 0; break;
+		case RIGHT:	    value = (4 * angle) + (angle? 0 : 5); break;
+		case LEFT:	    value = (-4 * (signed)angle) + (angle ? 0 : -5); break;
+		default:        value = 0; break;
+	}
+
+	razorcar_hw_regs->steering_speed = (razorcar_hw_regs->steering_speed & RAZORCAR_HARDWARE_SET_STEERING_MASK) + (value & 0xFF);
+	//xil_printf("Register state after :%X\n", razorcar_hw_regs->steering_speed);
+}
+
+int8_t get_steering(){
+	return razorcar_hw_regs->steering_speed & RAZORCAR_HARDWARE_GET_STEERING_MASK;
+}
+
+void set_speed(uint8_t direction, uint8_t speed){
+	int8_t value;
+	//xil_printf("Register state before :%X\n", razorcar_hw_regs->steering_speed);
+	switch (direction) {
+		case STOP:		value = 0; break;
+		case FORWARD:	value = (speed + 8); break;
+		case BACKWARD:	value = -(signed)speed - 2; break;
+		default:        value = 0; break;
+	}
+
+	razorcar_hw_regs->steering_speed = (razorcar_hw_regs->steering_speed & RAZORCAR_HARDWARE_SET_SPEED_MASK) + ((value & 0xFF) << 8);
+	//xil_printf("Register state after :%X\n", razorcar_hw_regs->steering_speed);
+}
+
+int8_t get_speed(){
+	return ((razorcar_hw_regs->steering_speed & RAZORCAR_HARDWARE_GET_SPEED_MASK) >> 8);
+}
+
+void set_driving_mode(uint8_t mode){
+	razorcar_hw_regs->steering_speed = (razorcar_hw_regs->steering_speed & RAZORCAR_HARDWARE_SET_MODE_MASK) + ((mode & 0x3) << 16);
+}
+
+uint8_t get_driving_mode(){
+	return ((razorcar_hw_regs->steering_speed & RAZORCAR_HARDWARE_GET_MODE_MASK) >> 16);
+}
+
+void resume_semi_auto_driving(){
+	if(get_driving_mode() == SEMI_AUTO){
+		razorcar_hw_regs->steering_speed = (razorcar_hw_regs->steering_speed & RAZORCAR_HARDWARE_RESUME_SEMI_AUTO_MASK) +
+											RAZORCAR_HARDWARE_RESUME_SEMI_AUTO_ID;
+		//delay_us(500);
+		razorcar_hw_regs->steering_speed = (razorcar_hw_regs->steering_speed & RAZORCAR_HARDWARE_RESUME_SEMI_AUTO_MASK);
+	}
+}
+/**************************** Buttons & Switches *****************************************/
+/* Register 3
+ * 24 => enable buttons interrupt
+ * 25 => enable switches interrupt - SWITCHE1
+ */
+
+void enable_hw_buttons_interrupt(){
+	razorcar_hw_regs->steering_speed = (razorcar_hw_regs->steering_speed & RAZORCAR_HARDWARE_HW_BTNINTR_MASK) +
+									    RAZORCAR_HARDWARE_HW_BTNINTR_ID;
+}
+
+void disable_hw_buttons_interrupt(){
+	razorcar_hw_regs->steering_speed = (razorcar_hw_regs->steering_speed & RAZORCAR_HARDWARE_HW_BTNINTR_MASK);
+}
+
+void enable_hw_switches_interrupt(){
+	razorcar_hw_regs->steering_speed = (razorcar_hw_regs->steering_speed & RAZORCAR_HARDWARE_HW_SWINTR_MASK) +
+										RAZORCAR_HARDWARE_HW_SWINTR_ID;
+}
+
+void disable_hw_switches_interrupt(){
+	razorcar_hw_regs->steering_speed = (razorcar_hw_regs->steering_speed & RAZORCAR_HARDWARE_HW_SWINTR_MASK);
+}
+
+/* Register 4
+* 0 - 1   => Buttons value
+* 8 - 11  => SWITCHE1 values
+* 16 - 17 => BTN_Intr & SW_Intr - for debugging purpose
+*/
+
+uint8_t get_buttons_values(){
+	return razorcar_hw_regs->bt_sw & RAZORCAR_HARDWARE_HW_GET_BTNVAL_MASK;
+}
+
+uint8_t get_switches_values(){
+	return (razorcar_hw_regs->bt_sw & RAZORCAR_HARDWARE_HW_GET_SWVAL_MASK) >> 8;
+}
+
+uint8_t get_hw_interrupts_state(){
+	return (razorcar_hw_regs->bt_sw & RAZORCAR_HARDWARE_HW_GET_BTSW_INTR_MASK) >> 16;
+}
+

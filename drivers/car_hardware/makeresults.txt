@@ -1,0 +1,150 @@
+make -C /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/linux-te-3.9 M=/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware modules ARCH=arm CROSS_COMPILE=arm-xilinx-linux-gnueabi-
+make[1]: Entering directory `/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/linux-te-3.9'
+  CC [M]  /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware.o
+  CC [M]  /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.o
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:147:43: warning: 'struct razorcar_hardware_module' declared inside parameter list [enabled by default]
+         int             (*startup)(struct razorcar_hardware_module *);
+                                           ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:147:43: warning: its scope is only this definition or declaration, which is probably not what you want [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:148:44: warning: 'struct razorcar_hardware_module' declared inside parameter list [enabled by default]
+         void            (*shutdown)(struct razorcar_hardware_module *);
+                                            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:149:48: warning: 'struct razorcar_hardware_module' declared inside parameter list [enabled by default]
+         void            (*flush_buffer)(struct razorcar_hardware_module *);
+                                                ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:154:37: warning: 'struct razorcar_hardware_module' declared inside parameter list [enabled by default]
+          const char *(*type)(struct razorcar_hardware_module *);
+                                     ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:160:50: warning: 'struct razorcar_hardware_module' declared inside parameter list [enabled by default]
+         void            (*release_module)(struct razorcar_hardware_module *);
+                                                  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:166:50: warning: 'struct razorcar_hardware_module' declared inside parameter list [enabled by default]
+         int             (*request_module)(struct razorcar_hardware_module *);
+                                                  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:167:49: warning: 'struct razorcar_hardware_module' declared inside parameter list [enabled by default]
+         void            (*config_module)(struct razorcar_hardware_module *, int);
+                                                 ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:169:41: warning: 'struct razorcar_hardware_module' declared inside parameter list [enabled by default]
+         int             (*ioctl)(struct razorcar_hardware_module *, unsigned int, unsigned long);
+                                         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c: In function 'razorcar_hardware_request_module':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:256:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+    module, (unsigned long long) module->membase);
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c: At top level:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:267:2: warning: initialization from incompatible pointer type [enabled by default]
+  .startup = razorcar_hardware_startup,
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:267:2: warning: (near initialization for 'razorcar_hardware_ops.startup') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:268:2: warning: initialization from incompatible pointer type [enabled by default]
+  .shutdown = razorcar_hardware_shutdown,
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:268:2: warning: (near initialization for 'razorcar_hardware_ops.shutdown') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:269:9: warning: initialization from incompatible pointer type [enabled by default]
+         .type  = razorcar_hardware_type,
+         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:269:9: warning: (near initialization for 'razorcar_hardware_ops.type') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:270:2: warning: initialization from incompatible pointer type [enabled by default]
+  .release_module = razorcar_hardware_release_module,
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:270:2: warning: (near initialization for 'razorcar_hardware_ops.release_module') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:271:2: warning: initialization from incompatible pointer type [enabled by default]
+  .request_module = razorcar_hardware_request_module,
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:271:2: warning: (near initialization for 'razorcar_hardware_ops.request_module') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:272:2: warning: initialization from incompatible pointer type [enabled by default]
+  .config_module = razorcar_hardware_config_module,
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:272:2: warning: (near initialization for 'razorcar_hardware_ops.config_module') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c: In function 'razorcar_hardware_data_ioctl':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:282:6: warning: unused variable 'err' [-Wunused-variable]
+  int err = 0;
+      ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c: In function 'razorcar_hardware_add_one_module':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:461:9: warning: passing argument 1 of 'module->ops->config_module' from incompatible pointer type [enabled by default]
+         module->ops->config_module(module, 0);
+         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:461:9: note: expected 'struct razorcar_hardware_module *' but argument is of type 'struct razorcar_hardware_module *'
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:462:9: warning: passing argument 1 of 'module->ops->type' from incompatible pointer type [enabled by default]
+         if (!module->ops->type(module))
+         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:462:9: note: expected 'struct razorcar_hardware_module *' but argument is of type 'struct razorcar_hardware_module *'
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:465:9: warning: passing argument 1 of 'module->ops->startup' from incompatible pointer type [enabled by default]
+         ret = module->ops->startup(module);
+         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:465:9: note: expected 'struct razorcar_hardware_module *' but argument is of type 'struct razorcar_hardware_module *'
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:458:41: warning: unused variable 'state' [-Wunused-variable]
+         struct razorcar_hardware_state *state;
+                                         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c: In function 'razorcar_hardware_remove_one_module':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:482:9: warning: passing argument 1 of 'module->ops->shutdown' from incompatible pointer type [enabled by default]
+         module->ops->shutdown(module);
+         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:482:9: note: expected 'struct razorcar_hardware_module *' but argument is of type 'struct razorcar_hardware_module *'
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:483:9: warning: passing argument 1 of 'module->ops->release_module' from incompatible pointer type [enabled by default]
+         module->ops->release_module(module);
+         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:483:9: note: expected 'struct razorcar_hardware_module *' but argument is of type 'struct razorcar_hardware_module *'
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:480:41: warning: unused variable 'state' [-Wunused-variable]
+         struct razorcar_hardware_state *state;
+                                         ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c: At top level:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:595:63: warning: 'struct of_device' declared inside parameter list [enabled by default]
+ razorcar_hardware_of_probe(struct of_device *op, const struct of_device_id *match)
+                                                               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c: In function 'razorcar_hardware_of_probe':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:599:6: warning: unused variable 'irq' [-Wunused-variable]
+  int irq, rc;
+      ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:598:22: warning: unused variable 'id' [-Wunused-variable]
+  const unsigned int *id;
+                      ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:597:18: warning: unused variable 'res' [-Wunused-variable]
+  struct resource res;
+                  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c: At top level:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:617:47: warning: 'struct of_device' declared inside parameter list [enabled by default]
+ static int razorcar_hardware_of_remove(struct of_device *op)
+                                               ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c: In function 'razorcar_hardware_of_remove':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:620:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c: At top level:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:626:2: warning: initialization from incompatible pointer type [enabled by default]
+  .probe = razorcar_hardware_of_probe,
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:626:2: warning: (near initialization for 'razorcar_hardware_of_driver.probe') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:627:2: warning: initialization from incompatible pointer type [enabled by default]
+  .remove = razorcar_hardware_of_remove,
+  ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:627:2: warning: (near initialization for 'razorcar_hardware_of_driver.remove') [enabled by default]
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c: In function 'razorcar_hardware_of_register':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:641:7: warning: passing argument 1 of 'platform_driver_register' from incompatible pointer type [enabled by default]
+       return platform_driver_register(&razorcar_hardware_of_driver);
+       ^
+In file included from include/linux/of_device.h:4:0,
+                 from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:43:
+include/linux/platform_device.h:179:12: note: expected 'struct platform_driver *' but argument is of type 'struct of_platform_driver *'
+ extern int platform_driver_register(struct platform_driver *);
+            ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c: In function 'razorcar_hardware_of_unregister':
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:647:7: warning: passing argument 1 of 'platform_driver_unregister' from incompatible pointer type [enabled by default]
+       platform_driver_unregister(&razorcar_hardware_of_driver);
+       ^
+In file included from include/linux/of_device.h:4:0,
+                 from /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:43:
+include/linux/platform_device.h:180:13: note: expected 'struct platform_driver *' but argument is of type 'struct of_platform_driver *'
+ extern void platform_driver_unregister(struct platform_driver *);
+             ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c: At top level:
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:722:1: warning: data definition has no type or storage class [enabled by default]
+ EXPORT_NO_SYMBOLS;
+ ^
+/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl_main.c:722:1: warning: type defaults to 'int' in declaration of 'EXPORT_NO_SYMBOLS' [-Wimplicit-int]
+  LD [M]  /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl.mod.o
+  LD [M]  /home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/Test-version/Mike/drivers/car_hardware/razorcar_hardware_ctrl.ko
+make[1]: Leaving directory `/home/ulrichyonga/Documents/Dissertation/Embedded_Linux/buildroot/linux-te-3.9'
