@@ -130,6 +130,7 @@ Point middlePoints[2] = {Point(0,0), Point(0,0)};
 /*pixels to meters conversion metric: 177pixels/2ft = 177pixels/2*0.3048meters
  = 290.354pixels/meter.  meters/pixel 1/290.354 */
 float Pix2meters = 290.354;
+double meter;
 //int to string helper function
 string intToString(int number){
 
@@ -175,8 +176,9 @@ void searchForMovement(Mat thresholdImage, Mat &cameraFeed){
 			middlePoints[0] = middlePoints[1];
 			middlePoints[1] = Point(xpos, ypos);
 			double distance = cv::norm(middlePoints[1] - middlePoints[0]);
+			::meter = distance / Pix2meters;
 			cout << "Pixel distance in one second: " << distance << endl;
-			cout << "Meters per second: " << distance / Pix2meters << endl;
+			cout << "Meters per second: " << ::meter << endl;
 		}
 	}
 }
@@ -304,6 +306,11 @@ int main(int argc, char *argv[])
 				    cout<<"Failed to send data"<<endl;
 			}
 		#else
+			std::string output = "Meters per second: " + std::to_string(::meter);
+			int baseLine = 0;
+			Size textSize = getTextSize(output, 1, 1, 1, &baseLine);
+			Point textOrigin(frame1.cols - 2*textSize.width -10, frame1.rows - 2*baseLine -10);
+			putText(frame1, output, textOrigin, CV_FONT_HERSHY_SIMPLEX, 1, 8);
 			imshow("Frame1",frame1);
 		    cvWaitKey(10);
 		#endif
