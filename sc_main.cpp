@@ -138,6 +138,7 @@ Point middlePoints[2] = {Point(0,0), Point(0,0)};
 /*pixels to meters conversion metric: 177pixels/2ft = 177pixels/2*0.3048meters
  = 290.354pixels/meter.  meters/pixel 1/290.354 */
 float Pix2meters = 290.354;
+double quartmeter;
 //int to string helper function
 string intToString(int number){
 
@@ -183,8 +184,9 @@ void searchForMovement(Mat thresholdImage, Mat &cameraFeed){
 			middlePoints[0] = middlePoints[1];
 			middlePoints[1] = Point(xpos, ypos);
 			double distance = cv::norm(middlePoints[1] - middlePoints[0]);
+			::quartmeter = (distance / Pix2meters)/4;
 			cout << "Pixel distance in quarter second: " << distance/4 << endl;
-			cout << "Meters per quarter second: " << (distance / Pix2meters)/4 << endl;
+			cout << "Meters per quarter second: " << ::quartmeter << endl;
 		}
 	}
 }
@@ -281,6 +283,12 @@ int motionTracking_main(){
 			{
 				searchForMovement(thresholdImage,frame1);
 			}
+			std::string output = "Meters per quarter second: " + std::to_string(::quartmeter);
+			int baseLine = 0;
+			Size textSize = getTextSize(output, 1, 1, 1, &baseLine);
+			Point textOrigin(frame1.cols - 2*textSize.width - 10, frame1.rows - 2*baseLine - 10);	
+			putText(frame1, output, textOrigin, CV_FONT_HERSHEY_SIMPLEX, 1, 8);
+			
 			//show our captured frame
 			imshow("Frame1",frame1);
 			//check to see if a button has been pressed.
