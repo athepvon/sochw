@@ -21,14 +21,88 @@
 #include <assert.h>
 #include <stdexcept>
 #include <iostream>
+#include "UdpClient.h"
 #include "Packet.h"
-#define HARDWARE 0
+#define HARDWARE 1
 #define ROTATE 1
 #if HARDWARE == 1
 #include "usr/drivers/sdi/plb_sdi_controller.h"
 #endif
 using namespace std;
 using namespace cv;
+const char *addr = "130.184.100.36";
+static const double pi = 3.14159265358979323846;
+int port = 9999;
+int reversDigits(int num)
+{
+  static int rev_num = 0;
+  static int base_pos = 1;
+  if(num > 0)
+  {
+    reversDigits(num/10);
+    rev_num  += (num%10)*base_pos;
+    base_pos *= 10;
+  }
+  return rev_num;
+}
+
+UdpClient::UdpClient(const string& ipaddr, unsigned int port) : id(0) {
+    if ((fd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+        cout<<"no socket available"<< endl;
+    }
+
+    struct sockaddr_in addr;
+    memset(&addr, 0, sizeof(addr));
+    addr.sin_family = AF_INET;
+    addr.sin_addr.s_addr = htonl(INADDR_ANY);
+    addr.sin_port = htons(0);
+    
+    if (bind(fd, (struct sockaddr*)&addr, sizeof(addr))) {
+        close(fd);
+        cout<<"cannot bind to socket"<< endl;
+    }
+
+    struct sockaddr_in serverAddr;
+    memset(&serverAddr, 0, sizeof(serverAddr));
+    serverAddr.sin_family = AF_INET;
+    serverAddr.sin_addr.s_addr = inet_addr(ipaddr.c_str());
+    serverAddr.sin_port = htons(port);
+
+    if (connect(fd, (struct sockaddr*)&serverAddr, sizeof(serverAddr)) < 0) {
+       close(fd);
+       cout<<"cannot connect to socket"<< endl;
+    }
+}
+
+
+UdpClient::~UdpClient() {
+    close(fd);
+}
+
+int UdpClient::sendData(char* buffer, int len) {
+        return (::send(fd, buffer, len, 0) );
+}
+
+
+void UdpClient::send() {
+    const size_t size = 100;
+    char buffer[size];
+    for (unsigned int i=0; i<size; ++i) {
+        fillPacket(buffer, size);
+        if (::send(fd, buffer, size, 0) < 0) {
+            cerr << "error sending packet " << i << endl;
+        }
+    }
+}
+
+
+void UdpClient::fillPacket(char* data, size_t size) {
+    assert(size >= sizeof(Packet));
+    memset(data, 0, size);
+    Packet* header = (Packet*)data;
+    ++id;
+    header->id = id;
+}
 typedef unsigned long long timestamp_t;
 static timestamp_t get_timestamp ()
 {
@@ -141,6 +215,7 @@ void openDeviceDriver( )
 
 int main(int argc, char *argv[])
 {
+	UdpClient client(addr, port);
 	bool objectDetected = false;
 	bool debugMode = true;
 	bool trackingEnabled = true;
@@ -153,39 +228,56 @@ int main(int argc, char *argv[])
 	
 	#if HARDWARE == 1
 		openDeviceDriver();
+		static int tmp1 = 0;static int tmp2 = 0;static int tmp = 0;
+	uint8_t *dst = (uint8_t *) (dst_buffer + BUFFER_SIZE);
+	uint8_t *dstb = (uint8_t *) dst_buffer;
 	#else
 		//this is where the image/video is captured
 		VideoCapture capture(0);
 	#endif
-
- 
+	 int risult;
+	int udpsize= 15360; int udpi=0; int udpj=0;
+	char buf[udpsize];
+	static IplImage *framer1 = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
+    IplImage *framein = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
+	IplImage *framein1 = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
+	IplImage *frame1Ipl = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
+ 	IplImage *framed = cvCreateImage(cvSize(240,320), IPL_DEPTH_8U, 1);
+ 	IplImage *fram = cvCreateImage(cvSize(320,240), IPL_DEPTH_8U, 1);
+ 	uchar* datax1   = (uchar *)fram->imageData;
+    uchar* data1   = (uchar *)framer1->imageData;
+    framein = new IplImage(frame1);
+    
 	while(true)
 	{
 		#if HARDWARE == 1
 			ioctl(deviceDriverFile,PLB_SDI_CTRL_IOCSWRSNG,&tmp1);
 			framein->imageData = (char *) (dst_buffer);  
             cvConvertImage(framein, framein1, 0);
-            frame=framed;
-            cvResize(framein1 , frame, CV_INTER_LINEAR);
+            frame1=framed;
+            
+            cvResize(framein1 , frame1Ipl, CV_INTER_LINEAR);
+            frame1 = frame1Ipl;
         #else
         	//input the frames camera>>frame
         	capture >> frame1;
     	#endif
-    	
-    	#if RAZORCAR == 1
+  
+    	#if HARDWARE == 1
 			tmp1 = 0;tmp = 0;
 		    ioctl(deviceDriverFile,PLB_SDI_CTRL_IOCSWRSNG,&tmp1); 
 	        framein->imageData = (char *) (dst_buffer);  
 			cvConvertImage(framein, framein1, 0);
-			frame=framed;
-			cvResize(framein1, frame, CV_INTER_LINEAR);
+			frame2=framed;
+			cvResize(framein1, frame1Ipl, CV_INTER_LINEAR);
+			frame2 = frame1Ipl;
 		#else
         	//input the frames camera>>frame
         	capture >> frame2;
     	#endif
     	FrameCount++;
-		cv::cvtColor(frame2, grayImage2, COLOR_BGR2GRAY);
-		cv::absdiff(grayImage1,grayImage2,differenceImage);
+		//cv::cvtColor(frame2, grayImage2, COLOR_BGR2GRAY);
+		cv::absdiff(frame2,frame1,differenceImage);
 		
 		cv::threshold(differenceImage, thresholdImage,SENSITIVITY_VALUE,255,THRESH_BINARY);
 		
@@ -197,8 +289,10 @@ int main(int argc, char *argv[])
 		
 		t1 = get_timestamp();
    	    secs = (t1 - t0) / 1000000.0L;
-		#if RAZORCAR == 1
+   	    
+		#if HARDWARE == 1
 			dst = (uint8_t *) (dst_buffer + BUFFER_SIZE);
+			framer1 = new IplImage(frame1);
 			memcpy(dst,framer1->imageData,BUFFER_SIZE);
 		    tmp=0;
 			ioctl(deviceDriverFile,PLB_SDI_CTRL_IOCSRDSNG,&tmp);		
