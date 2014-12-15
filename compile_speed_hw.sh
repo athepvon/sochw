@@ -1,6 +1,7 @@
-export PATH='/opt/pkg/petalinux-v2014.2-final/tools/linux-i386/arm-xilinx-linux-gnueabi/bin':$PATH
+#export PATH='/opt/pkg/petalinux-v2014.2-final/tools/linux-i386/arm-xilinx-linux-gnueabi/bin':$PATH
 #export CROSS_COMPILE=arm-xilinx-linux-gnueabi-
-arm-xilinx-linux-gnueabi-g++ -o speed speedTracker.cpp `pkg-config --cflags --libs opencv`
+
+arm-xilinx-linux-gnueabi-g++ -o speed_arm speedTracker.cpp `pkg-config --cflags --libs opencv.pc`
 #arm-xilinx-linux-gnueabi-g++ -o speed speedTracker.cpp \
 #			     -Wl,-rpath-link, usr/lib/lib*.so.* \
 #                             -L arm_build/lib \

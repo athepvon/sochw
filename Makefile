@@ -1,5 +1,5 @@
 motion:
-	g++ motionTracking.cpp -o motion `pkg-config --cflags --libs opencv`
+	g++ -std=c++11 motionTracking.cpp -o motion `pkg-config --cflags --libs opencv`
 	
 speed:
 	g++ speedTracker.cpp -o speed `pkg-config --cflags --libs opencv`

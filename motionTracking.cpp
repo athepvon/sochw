@@ -14,9 +14,9 @@
 //IN THE SOFTWARE.
 
 //danny is the coolest
-#include <cv.h>
-#include <highgui.h>
-
+#include <opencv/cv.hpp>
+#include <opencv/highgui.h>
+#include <iostream>
 using namespace std;
 using namespace cv;
 
