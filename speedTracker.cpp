@@ -1,24 +1,23 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <stdint.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>
 #include <sys/unistd.h>
-#include <string.h>
+//#include <string.h>
 #include <sys/mman.h>
-#include <stdio.h>
 #include <cv.h>
+#include <cv.hpp>
 #include <highgui.h>
 #include <math.h>
 #include <sys/time.h>
-#include <time.h>
+//#include <time.h>
 #include <iostream>
-#include <sys/types.h>
+//#include <sys/types.h>
 #include <sys/socket.h>
-#include <string.h>
-#include <netinet/in.h>
+//#include <netinet/in.h>
 #include <arpa/inet.h>
-#include <assert.h>
+//#include <assert.h>
 #include <stdexcept>
 #include <iostream>
 #include "UdpClient.h"
@@ -103,6 +102,7 @@ void UdpClient::fillPacket(char* data, size_t size) {
     ++id;
     header->id = id;
 }
+
 typedef unsigned long long timestamp_t;
 static timestamp_t get_timestamp ()
 {
@@ -111,7 +111,6 @@ static timestamp_t get_timestamp ()
       return  now.tv_usec + (timestamp_t)now.tv_sec * 1000000;
 }
 timestamp_t t1,t0; double secs;
-timestamp_t tx1,tx0; double secsx;
 //our sensitivity value to be used in the threshold() function
 const static int SENSITIVITY_VALUE = 20;
 //size of blur used to smooth the image to remove possible noise and
@@ -184,8 +183,8 @@ void searchForMovement(Mat thresholdImage, Mat &cameraFeed){
 }
 
 int deviceDriverFile;
-uint8_t *dst_buffer; uint8_t *mapped_base;
-uint8_t *dst_buffer1; uint8_t *mapped_base1;
+uint8_t *dst_buffer; 
+
 #if HARDWARE == 1
 void openDeviceDriver( )
 {
@@ -197,14 +196,14 @@ void openDeviceDriver( )
 				perror("mmap() failed");
 				exit(1);
 			}
-                        else{
-                                unsigned long tmp = 0;unsigned long tmp1 = 0;
+            else{
+            	unsigned long tmp = 0;unsigned long tmp1 = 0;
 				ioctl(deviceDriverFile, PLB_SDI_CTRL_IOCSHWREGNUM, &tmp);
 				ioctl(deviceDriverFile, PLB_SDI_CTRL_IOCGHWREG, &tmp);
 				printf( "HW Version:Magic: %08X\n", tmp );
 				printf( "cap dist buffer: %08X\n", dst_buffer );
                                 tmp = 9; tmp1=0;
-                        }
+            }
 	}
 	else{
              perror("plb_sdi_controller_apps open");
@@ -212,8 +211,6 @@ void openDeviceDriver( )
         }
 }
 #endif
-
-
 
 int main(int argc, char *argv[])
 {
@@ -230,25 +227,27 @@ int main(int argc, char *argv[])
 	
 	#if HARDWARE == 1
 		openDeviceDriver();
-		static int tmp1 = 0;static int tmp2 = 0;static int tmp = 0;
-	uint8_t *dst = (uint8_t *) (dst_buffer + BUFFER_SIZE);
-	uint8_t *dstb = (uint8_t *) dst_buffer;
+		static int tmp1 = 0;static int tmp = 0;
+		uint8_t *dst = (uint8_t *) (dst_buffer + BUFFER_SIZE);
+		uint8_t *dstb = (uint8_t *) dst_buffer;
 	#else
 		//this is where the image/video is captured
 		VideoCapture capture(0);
 	#endif
-	 int risult;
-	int udpsize= 15360; int udpi=0; int udpj=0;
-	char buf[udpsize];
-	static IplImage *framer1 = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
-    IplImage *framein = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
-	IplImage *framein1 = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
-	IplImage *frame1Ipl = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
- 	IplImage *framed = cvCreateImage(cvSize(240,320), IPL_DEPTH_8U, 1);
- 	IplImage *fram = cvCreateImage(cvSize(320,240), IPL_DEPTH_8U, 1);
- 	uchar* datax1   = (uchar *)fram->imageData;
-    uchar* data1   = (uchar *)framer1->imageData;
-    framein = new IplImage(frame1);
+	
+	#if HARDWARE ==1
+		int risult;
+		int udpsize= 15360; int udpi=0; int udpj=0;
+		char buf[udpsize];
+		static IplImage *framer1 = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
+    	IplImage *framein = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
+		IplImage *framein1 = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
+		IplImage *frame1Ipl = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
+ 		IplImage *framed = cvCreateImage(cvSize(240,320), IPL_DEPTH_8U, 1);
+ 		IplImage *fram = cvCreateImage(cvSize(320,240), IPL_DEPTH_8U, 1);
+ 		uchar* datax1 = (uchar *)fram->imageData;
+    	//framein = new IplImage(frame1);
+    #endif
     
 	while(true)
 	{
@@ -257,7 +256,6 @@ int main(int argc, char *argv[])
 			framein->imageData = (char *) (dst_buffer);  
             cvConvertImage(framein, framein1, 0);
             frame1=framed;
-            
             cvResize(framein1 , frame1Ipl, CV_INTER_LINEAR);
             frame1 = frame1Ipl;
         #else
@@ -277,6 +275,7 @@ int main(int argc, char *argv[])
         	//input the frames camera>>frame
         	capture >> frame2;
     	#endif
+    	
     	FrameCount++;
 		//cv::cvtColor(frame2, grayImage2, COLOR_BGR2GRAY);
 		cv::absdiff(frame2,frame1,differenceImage);
@@ -299,18 +298,19 @@ int main(int argc, char *argv[])
 		    tmp=0;
 			ioctl(deviceDriverFile,PLB_SDI_CTRL_IOCSRDSNG,&tmp);		
 			for(udpi=0;udpi<5;udpi++)
-			{for(udpj=0;udpj<udpsize;udpj++) 
-				buf[udpj]=datax1[(udpi*udpsize) +udpj];
+			{
+				for(udpj=0;udpj<udpsize;udpj++) 
+					buf[udpj]=datax1[(udpi*udpsize) +udpj];
 				risult = client.sendData(buf, udpsize);
 				if(risult < 0)
-				    cout<<"Failed to send data"<<endl;
+					cout<<"Failed to send data"<<endl;
 			}
 		#else
-			std::string output = "Meters per second: " + std::to_string(::meter);
+			//std::string output = "Meters per second: " + std::to_string(::meter);
 			int baseLine = 0;
-			Size textSize = getTextSize(output, 1, 1, 1, &baseLine);
-			Point textOrigin(frame1.cols - 2*textSize.width -10, frame1.rows - 2*baseLine -10);
-			putText(frame1, output, textOrigin, CV_FONT_HERSHY_SIMPLEX, 1, 8);
+			//Size textSize = getTextSize(output, 1, 1, 1, &baseLine);
+			//Point textOrigin(frame1.cols - 2*textSize.width -10, frame1.rows - 2*baseLine -10);
+			//putText(frame1, output, textOrigin,CV_FONT_HERSHY_SIMPLEX, 1, 8);
 			imshow("Frame1",frame1);
 		    cvWaitKey(10);
 		#endif
