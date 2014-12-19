@@ -122,13 +122,13 @@ int main(){
 	//thresholded difference image (for use in findContours() function)
 	Mat thresholdImage;
 	//video capture object.
-	VideoCapture capture(0);
+	VideoCapture capture;
 
 	while(1){
 
 		//we can loop the video by re-opening the capture every time the video reaches its last frame
 
-		//capture.open("bouncingBall.avi");
+		capture.open("bouncingBall.avi");
 
 		if(!capture.isOpened()){
 			cout<<"ERROR ACQUIRING VIDEO FEED\n";
@@ -141,7 +141,7 @@ int main(){
 		//check if the video has reach its last frame.
 		//we add '-1' because we are reading two frames from the video at a time.
 		//if this is not included, we get a memory error!
-		/*while(capture.get(CV_CAP_PROP_POS_FRAMES)<capture.get(CV_CAP_PROP_FRAME_COUNT)-1){*/
+		while(capture.get(CV_CAP_PROP_POS_FRAMES)<capture.get(CV_CAP_PROP_FRAME_COUNT)-1){
 
 			//read first frame
 			/*capture.read(frame1);*/
@@ -233,9 +233,9 @@ int main(){
 			}
 
 
-		/*}*/
+		}
 		//release the capture before re-opening and looping again.
-		/*capture.release();*/
+		capture.release();
 
 	}
 

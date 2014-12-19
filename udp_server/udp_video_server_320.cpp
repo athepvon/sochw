@@ -112,7 +112,7 @@ void *receive_cam1_thread(void*){
     int i=0; int j=0;  int size= 15360;
     while(1){
         //read data
-        IplImage *frame = cvCreateImage(cvSize(320,240), IPL_DEPTH_8U, 1), *frameO = cvCreateImage(cvSize(320,240), IPL_DEPTH_8U, 1), *frameD = cvCreateImage(cvSize(240,320), IPL_DEPTH_8U, 1);
+        IplImage *frame = cvCreateImage(cvSize(320,240), IPL_DEPTH_8U, 1), *frameO = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1), *frameD = cvCreateImage(cvSize(240,320), IPL_DEPTH_8U, 1);
         char * data=(char*)frame->imageData;
         for(i=0;i<5;i++)
         {       
@@ -128,14 +128,15 @@ void *receive_cam1_thread(void*){
 		cout<<"Got a frame 1 of size "<<result<<endl;
                	for(j=0;j<size;j++) data[(i*size) +j]=buff[j];
         }
+        cvResize(frame,frameO,CV_INTER_LINEAR);
         //IplImage *frame = cvCreateImage(cvSize(320,240), IPL_DEPTH_8U, 1);
         //frame->imageData = (char *) (buff);
-	cvTranspose(frame, frameD);
-        cvFlip(frameD, frameD, 0);
-	cvTranspose(frameD, frameO);
-        cvFlip(frameO, frameO, 0);
+		//cvTranspose(frame, frameD);
+       // cvFlip(frameD, frameD, 0);
+		//cvTranspose(frameD, frameO);
+        //cvFlip(frameO, frameO, 0);
         cvShowImage("UDP Video Receiver 1", frameO);
-        cvMoveWindow("UDP Video Receiver 3",50, 100);
+        cvMoveWindow("UDP Video Receiver 1",50, 100);
         cvWaitKey(1);
     }
 }

@@ -1,35 +1,27 @@
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <stdint.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>
 #include <sys/unistd.h>
-//#include <string.h>
 #include <sys/mman.h>
 #include <cv.h>
 #include <cv.hpp>
 #include <highgui.h>
 #include <math.h>
 #include <sys/time.h>
-//#include <time.h>
 #include <iostream>
-//#include <sys/types.h>
 #include <sys/socket.h>
-//#include <netinet/in.h>
 #include <arpa/inet.h>
-//#include <assert.h>
 #include <stdexcept>
 #include <iostream>
 #include "UdpClient.h"
 #include "Packet.h"
-#define HARDWARE 1
+#define HARDWARE 0
 #define ROTATE 1
 #if HARDWARE == 1
 #include "usr/drivers/sdi/plb_sdi_controller.h"
 #endif
 using namespace std;
 using namespace cv;
-const char *addr = "130.184.100.36";
+const char *addr = "192.168.1.12";
 static const double pi = 3.14159265358979323846;
 int port = 9999;
 int reversDigits(int num)
@@ -139,7 +131,7 @@ string intToString(int number){
 	return ss.str();
 }
 
-void searchForMovement(Mat thresholdImage, Mat &cameraFeed){
+int searchForMovement(Mat thresholdImage, Mat &cameraFeed){
 	//notice how we use the '&' operator for the cameraFeed. This is because we wish
 	//to take the values passed into the function and manipulate them, rather than just working with a copy.
 	//eg. we draw to the cameraFeed in this function which is then displayed in the main() function.
@@ -179,7 +171,10 @@ void searchForMovement(Mat thresholdImage, Mat &cameraFeed){
 			cout << "Pixel distance in one second: " << distance << endl;
 			cout << "Meters per second: " << ::meter << endl;
 		}
+		return 1;
 	}
+	else
+		return 0;
 }
 
 int deviceDriverFile;
@@ -215,11 +210,12 @@ void openDeviceDriver( )
 int main(int argc, char *argv[])
 {
 	UdpClient client(addr, port);
+	int key_pressed = 0;
 	bool objectDetected = false;
 	bool debugMode = true;
 	bool trackingEnabled = true;
 	bool pause = false;
-	Mat frame1,frame2;
+	//Mat frame1,frame2;
 	Mat grayImage1,grayImage2;
 	Mat differenceImage;
 	Mat thresholdImage;
@@ -232,25 +228,29 @@ int main(int argc, char *argv[])
 		uint8_t *dstb = (uint8_t *) dst_buffer;
 	#else
 		//this is where the image/video is captured
-		VideoCapture capture(0);
+		//VideoCapture capture;
+		CvCapture *input_video;
 	#endif
-	
-	#if HARDWARE ==1
 		int risult;
 		int udpsize= 15360; int udpi=0; int udpj=0;
-		char buf[udpsize];
+		char buf[udpsize]; 		
+		
+	//#if HARDWARE ==1
+
 		static IplImage *framer1 = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
     	IplImage *framein = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
 		IplImage *framein1 = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
-		IplImage *frame1Ipl = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);
+		IplImage *frame1Ipl = cvCreateImage(cvSize(640,480), IPL_DEPTH_8U, 1);;
  		IplImage *framed = cvCreateImage(cvSize(240,320), IPL_DEPTH_8U, 1);
  		IplImage *fram = cvCreateImage(cvSize(320,240), IPL_DEPTH_8U, 1);
- 		uchar* datax1 = (uchar *)fram->imageData;
+		IplImage *destin = NULL;
     	//framein = new IplImage(frame1);
-    #endif
-    
-	while(true)
+   // #endif
+    input_video = cvCaptureFromFile("bouncingBall.avi");
+	while(key_pressed != 27)
 	{
+	
+
 		#if HARDWARE == 1
 			ioctl(deviceDriverFile,PLB_SDI_CTRL_IOCSWRSNG,&tmp1);
 			framein->imageData = (char *) (dst_buffer);  
@@ -260,9 +260,11 @@ int main(int argc, char *argv[])
             frame1 = frame1Ipl;
         #else
         	//input the frames camera>>frame
-        	capture >> frame1;
+        	//capture >> frame1;
+        	destin = cvQueryFrame(input_video);
+        	Mat frame1(destin);
     	#endif
-  
+    	
     	#if HARDWARE == 1
 			tmp1 = 0;tmp = 0;
 		    ioctl(deviceDriverFile,PLB_SDI_CTRL_IOCSWRSNG,&tmp1); 
@@ -273,24 +275,43 @@ int main(int argc, char *argv[])
 			frame2 = frame1Ipl;
 		#else
         	//input the frames camera>>frame
-        	capture >> frame2;
+        	//capture >> frame2;
+        	destin = cvQueryFrame(input_video);
+        	Mat frame2(destin);
     	#endif
     	
     	FrameCount++;
-		//cv::cvtColor(frame2, grayImage2, COLOR_BGR2GRAY);
-		cv::absdiff(frame2,frame1,differenceImage);
-		
+    	cv::cvtColor(frame1, grayImage1, COLOR_BGR2GRAY);
+		cv::cvtColor(frame2, grayImage2, COLOR_BGR2GRAY);
+		cv::absdiff(grayImage1,grayImage2,differenceImage);
+
 		cv::threshold(differenceImage, thresholdImage,SENSITIVITY_VALUE,255,THRESH_BINARY);
 		
 		cv::blur(thresholdImage,thresholdImage,cv::Size(BLUR_SIZE,BLUR_SIZE));
 			//threshold again to obtain binary image from blur output
 		cv::threshold(thresholdImage, thresholdImage,SENSITIVITY_VALUE,255,THRESH_BINARY);
 		
-		searchForMovement(thresholdImage,frame1);
+		int newSpeed = searchForMovement(thresholdImage,frame1);
+		std::string output;
+		int baseLine = 0;
 		
-		t1 = get_timestamp();
-   	    secs = (t1 - t0) / 1000000.0L;
+		if(newSpeed){
+			output = "Meters per second: " + std::to_string(::meter);
+		}
+		else{
+			output = "Meters per second: " + 0;
+		}
+		Size textSize = getTextSize(output, 1, 1, 1, &baseLine);
+		Point textOrigin(frame1.cols - 2*textSize.width -10, frame1.rows - 2*baseLine -10);
+		putText(grayImage1, output, textOrigin,FONT_HERSHEY_TRIPLEX, 1, 8);
+		putText(frame1, output, textOrigin,FONT_HERSHEY_TRIPLEX, 1, 8);
+		frame1Ipl = new IplImage(grayImage1);
+   	    //fram = frame1Ipl;
    	    
+   	    cvResize(frame1Ipl, fram);
+   	    
+   	    uchar* datax1 = (uchar *)fram->imageData;
+
 		#if HARDWARE == 1
 			dst = (uint8_t *) (dst_buffer + BUFFER_SIZE);
 			framer1 = new IplImage(frame1);
@@ -306,24 +327,26 @@ int main(int argc, char *argv[])
 					cout<<"Failed to send data"<<endl;
 			}
 		#else
-			//std::string output = "Meters per second: " + std::to_string(::meter);
+			for(udpi=0;udpi<5;udpi++)
+			{
+				for(udpj=0;udpj<udpsize;udpj++) 
+					buf[udpj]=datax1[(udpi*udpsize) +udpj];
+				risult = client.sendData(buf, udpsize);
+				if(risult < 0)
+					cout<<"Failed to send data"<<endl;
+			}
+			/*std::string output = "Meters per second: " + std::to_string(::meter);
 			int baseLine = 0;
-			//Size textSize = getTextSize(output, 1, 1, 1, &baseLine);
-			//Point textOrigin(frame1.cols - 2*textSize.width -10, frame1.rows - 2*baseLine -10);
-			//putText(frame1, output, textOrigin,CV_FONT_HERSHY_SIMPLEX, 1, 8);
-			imshow("Frame1",frame1);
-		    cvWaitKey(10);
+			Size textSize = getTextSize(output, 1, 1, 1, &baseLine);
+			Point textOrigin(frame1.cols - 2*textSize.width -10, frame1.rows - 2*baseLine -10);
+			putText(frame1, output, textOrigin,FONT_HERSHEY_TRIPLEX, 1, 8);*/
 		#endif
+		
+		imshow("Frame1",frame1);
+		key_pressed = cvWaitKey(5);
+		
 	}
 	
-	//make sure to release IplImages before ending program
-	//cvReleaseImage( & framed);
-	//cvReleaseImage( & framein);
-	//cvReleaseImage( & framein1);
-	//cvReleaseImage( & framer1);
-	//cvReleaseImage( & imgHSV); //currently not being used
-	//cvReleaseImage( & h); //currently not being used
-	//cvReleaseImage( & s); //currently not being used
-	//cvReleaseImage( & framer); //currently not being used
+
 	
 }
